@@ -1,0 +1,43 @@
+site_name: SeAT Documentation
+site_description: SeAT Documentation
+repo_url: https://github.com/eveseat/docs
+pages:
+    - Home: index.md
+    - General:
+        - Contact: contact.md
+        - Reporting Bugs : reporting_bugs.md
+        - Community Packages: community_packages.md
+    - Setup Guides:
+        - Quick Install: setup_guides/quick_install.md
+        - CentOS 6.x: setup_guides/centos6.md
+        - CentOS 7.x: setup_guides/centos7.md
+        - Ubuntu 14.04.x: setup_guides/ubuntu1404.md
+        - Upgrading SeAT: setup_guides/upgrade.md
+    - Email:
+        - Mailgun Setup: email/mailgun.md
+    - Changelogs:
+        - Api: changelogs/api.md
+        - Console: changelogs/console.md
+        - Eveapi: changelogs/eveapi.md
+        - Notifications: changelogs/notifications.md
+        - Services: changelogs/services.md
+        - Web: changelogs/web.md
+    - Configuration:
+        - Overview: configuration/overview.md
+        - Api: configuration/api.md
+        - Console: configuration/console.md
+        - Eveapi: configuration/eveapi.md
+        - Notifications: configuration/notifications.md
+        - Service: configuration/service.md
+        - Web: configuration/web.md
+        - Other: configuration/other.md
+    - Integration:
+        - SeAT API: seat_api.md
+    - Eve XML API Updater:
+        - Job Queue Flow: eve_xml_api_updater/job_queue_flow.md
+    - Developing For SeAT:
+        - General Guide: development/general.md
+        - Core Package Breakdown: development/package_breakdown.md
+        - Package Development: development/package_development.md
+    - TODO List: todo.md
+theme: readthedocs
