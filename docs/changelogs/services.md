@@ -3,6 +3,13 @@
 # services change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.15
+```
+570bbd0 (tag: 1.0.15) Version Bump
+630b8af Remove unused pagination and CS fixes
+cbc4206 Services for Corporation Ledger queries. (#5)
+b87d364 Order jobs by creation date
+```
 ### 1.0.14
 ```
 e4d521b (tag: 1.0.14) Version Bump

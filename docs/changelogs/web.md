@@ -3,6 +3,13 @@
 # web change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.24
+```
+c20194b (tag: 1.0.24) Version Bump
+eac101f CS Fixes
+f6e3186 Small refactoring and CS fixes
+9997914 Adding Corporation Wallet Ledger (#23)
+```
 ### 1.0.23
 ```
 954c178 (tag: 1.0.23) Version Bump
