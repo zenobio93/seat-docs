@@ -3,6 +3,12 @@
 # console change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.11
+```
+53fda6e (tag: 1.0.11) Version Bump
+bb9841c Fix eveseat/seat#83 by ensuring seat:admin:reset recovers admin roles
+```
+
 ### 1.0.10
 ```
 8fb5ad1 (tag: 1.0.10) Version Bump

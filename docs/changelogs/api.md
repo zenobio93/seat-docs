@@ -3,6 +3,14 @@
 # api change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.10
+```
+3faff1e (tag: 1.0.10) Version Bump
+99871c9 Rename repository method that was incorrectly called
+131a3b8 Add /api/v1/corporation/all endpoint
+be8e6aa Include key info and characters.
+```
+
 ### 1.0.9
 ```
 22f8b34 (tag: 1.0.9) Version Bump

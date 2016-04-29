@@ -3,6 +3,19 @@
 # web change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.25
+```
+168bb3e (tag: 1.0.25) Version Bump
+aee17af Add ability to force a minimum API access mask.
+5101767 Start adding search functionality
+b8ac4fb Remove accountid as it is not useful data
+8604036 Fix eveseat/seat#81 by validating for numeric instead of integers
+e1cd641 Fix eveseat/seat#78 by adding a link to view one mail only
+60727e4 Warn if the default admin contact is still set. Ref eveseat/seat#77
+a5d1f8f Fix eveseat/seat#65 by setting the key_id in the model
+9884772 fix reinforcement time using API stateTimeStamp (#24)
+```
+
 ### 1.0.24
 ```
 c20194b (tag: 1.0.24) Version Bump

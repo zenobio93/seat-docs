@@ -3,6 +3,15 @@
 # eveapi change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.13
+```
+8f8e0b1 (tag: 1.0.13) Version Bump
+e9db18e Add a block if an admin contact email has not been set.
+459d353 Add the new char/Clones and char/Skills endpoints as updaters
+ccc7a08 Fix XSD as 2 new endpoints have been added, bumping accessMask to long type
+85b21b0 Disable keys that respond with HTTP 403 in APIKeyInfo
+```
+
 ### 1.0.12
 ```
 56c8444 (tag: 1.0.12) Version Bump
