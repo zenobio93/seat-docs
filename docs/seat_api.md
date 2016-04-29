@@ -104,26 +104,27 @@ All methods below have the requests and responses sampled using [httpie](https:/
  25. [Calendar Events](#character-calendar-events)
 
 * **Corporation Information**
- 1. [Assets](#corporation-assets)
- 2. [Assets by Location](#corporation-assets-by-location)
- 3. [Bookmarks](#corporation-bookmarks)
- 4. [Contacts](#corporation-contacts)
- 5. [Contracts](#corporation-contracts)
- 6. [Customs Offices](#corporation-customs-offices)
- 7. [Divisions](#corporation-divisions)
- 8. [Industry](#corporation-industry)
- 9. [Killmails](#corporation-killmails)
- 10. [Market Orders](#corporation-market-orders)
- 11. [Member Security](#corporation-member-security)
- 12. [Member Security Logs](#corporation-member-security-logs)
- 13. [Member Security Titles](#corporation-member-security-titles)
- 14. [Member Tracking](#corporation-member-tracking)
- 15. [Sheet](#corporation-sheet)
- 16. [Standings](#corporation-standings)
- 17. [Starbases](#corporation-starbases)
- 18. [Wallet Divisions](#corporation-wallet-divisions)
- 19. [Wallet Journal](#corporation-wallet-journal)
- 20. [Wallet Transactions](#corporation-wallet-transactions)
+ 1. [All](#all-corporations)
+ 2. [Assets](#corporation-assets)
+ 3. [Assets by Location](#corporation-assets-by-location)
+ 4. [Bookmarks](#corporation-bookmarks)
+ 5. [Contacts](#corporation-contacts)
+ 6. [Contracts](#corporation-contracts)
+ 7. [Customs Offices](#corporation-customs-offices)
+ 8. [Divisions](#corporation-divisions)
+ 9. [Industry](#corporation-industry)
+ 10. [Killmails](#corporation-killmails)
+ 11. [Market Orders](#corporation-market-orders)
+ 12. [Member Security](#corporation-member-security)
+ 13. [Member Security Logs](#corporation-member-security-logs)
+ 14. [Member Security Titles](#corporation-member-security-titles)
+ 15. [Member Tracking](#corporation-member-tracking)
+ 16. [Sheet](#corporation-sheet)
+ 17. [Standings](#corporation-standings)
+ 18. [Starbases](#corporation-starbases)
+ 19. [Wallet Divisions](#corporation-wallet-divisions)
+ 20. [Wallet Journal](#corporation-wallet-journal)
+ 21. [Wallet Transactions](#corporation-wallet-transactions)
 
 ### List all EVE API Keys
  * HTTP Verb: **GET**
@@ -161,14 +162,34 @@ http get http://localhost:8000/api/v1/key/123445 Accept:application/json X-Token
  * Sample Response:
 ```json
 {
-    "created_at": "2015-11-21 14:12:40",
+    "characters": [
+        {
+            "characterID": 123456,
+            "characterName": "ABC",
+            "corporationID": 123456,
+            "corporationName": "Garoun Investment Bank",
+            "created_at": "2015-12-02 10:48:31",
+            "id": 452,
+            "keyID": 123456,
+            "updated_at": "2015-12-02 10:48:31"
+        }
+    ],
+    "created_at": "2015-12-29 13:37:47",
     "disabled_calls": null,
     "enabled": 1,
-    "key_id": 123445,
-    "last_error": "221:Illegal page request! Please verify the access granted by the key you are using!",
-    "updated_at": "2015-11-21 14:14:11",
-    "user_id": 1,
-    "v_code": "IDT1wqjWtl9QGFGHPb5Zj0kle7EnQxWDiscH64aN44qhE07oOBTfCCLFmc3uj2Hf"
+    "info": {
+        "accessMask": 1073741823,
+        "created_at": "2015-12-02 10:48:31",
+        "expires": null,
+        "keyID": 123456,
+        "type": "Account",
+        "updated_at": "2015-12-02 10:48:31"
+    },
+    "key_id": 123456,
+    "last_error": null,
+    "updated_at": "2016-01-06 04:53:05",
+    "user_id": 10,
+    "v_code": "pTySpi19ChY18jKbQdSmDoA9zStDkbv5MYJDHm0aKtypa2IwjIDOXVNp9tfSFPfu"
 }
 ```
 
@@ -1538,6 +1559,48 @@ http get http://localhost:8000/api/v1/character/calendar/123456 Accept:applicati
         "ownerTypeID": 0,
         "response": "Undecided",
         "updated_at": "2015-11-23 19:01:42"
+    }
+]
+```
+
+### All Corporations
+ * HTTP Verb: **GET**
+ * Endpoint: `/api/v1/corporation/all`
+ * Parameters: None  
+ * Description: *Get corporations known to SeAT.*
+ * Sample Request: 
+```bash
+http get http://localhost:8000/api/v1/corporation/all Accept:application/json X-Token:123456
+```
+ * Sample Response:
+```json
+[
+    {
+        "allianceID": 0,
+        "allianceName": null,
+        "ceoID": 123456,
+        "ceoName": "ABC",
+        "color1": 683,
+        "color2": 674,
+        "color3": 673,
+        "corporationID": 123456,
+        "corporationName": "ABC Inc.",
+        "created_at": "2015-11-22 11:20:24",
+        "description": "Wut.",
+        "factionID": 0,
+        "graphicID": 0,
+        "memberCount": 9,
+        "memberLimit": 40,
+        "shape1": 415,
+        "shape2": 550,
+        "shape3": 513,
+        "shares": 1000,
+        "stationID": 60014761,
+        "stationName": "Aedald VIII - Moon 5 - Republic Military School",
+        "taxRate": "0.00",
+        "ticker": "ABC.",
+        "updated_at": "2015-11-22 11:20:24",
+        "url": ""
     }
 ]
 ```
