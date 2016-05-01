@@ -8,8 +8,8 @@ We are going to assume you have root access to a fresh CentOS 6.x Server. Typica
 Packages are installed using the `yum` package manager as the `root` user.
 
 ### table of contents
- 1. [Repositories](#repositories)  
-   i. [Epel](#epel)  
+ 1. [Repositories](#repositories)
+   i. [Epel](#epel)
    ii. [Remi](#remi)
  2. [Database](#database)
  3. [PHP & Apache](#php--apache)
@@ -21,7 +21,7 @@ Packages are installed using the `yum` package manager as the `root` user.
  9. [SeAT - Setup](#seat-setup)
  10. [Supervisor](#supervisor)
  11. [Crontab](#crontab)
- 12. [Webserver - Apache](#webserver---apache)  
+ 12. [Webserver - Apache](#webserver---apache)
    i. [Virtual Host Setup](#virtual-host-setup)
 
 ### repositories
@@ -95,7 +95,7 @@ With the database server installed, lets start it and configure it to automatica
 chkconfig mysqld on
 ```
 
-Next, we are going to secure the database server by removing anonymous access and setting a `root` password.  
+Next, we are going to secure the database server by removing anonymous access and setting a `root` password.
 
 ***
 **NOTE** The database `root` password should not be confused with the operating systems `root` passwords. They are both completely different. They should also not be the same password.
@@ -244,7 +244,7 @@ Finally, we get to install SeAT itself. The first thing we need to do is to deci
 ```
 cd /var/www
 ```
-Next, we will download SeAT using `composer` and save it to the `seat` directory.  
+Next, we will download SeAT using `composer` and save it to the `seat` directory.
 **NOTE** This can take some time, Composer does a ton of magic here :+1: (like recursively resolving all dependencies :O)
 ```
 composer create-project eveseat/seat seat --keep-vcs --prefer-source --no-dev
@@ -312,6 +312,9 @@ php artisan eve:update-sde -n
 ```
 php artisan seat:admin:reset
 ```
+```
+php artisan seat:admin:email
+```
 
 ### supervisor
 SeAT makes use of workers to actually process the update jobs that get scheduled. Think if the architecture as someone coming and dumping mail at the postoffice, and its up to say 4 workers to dig through the mail and sort it. Those 4 workers need a manager to ensure that they keep working. `supervisord` is a excellent candidate for the manager job.
@@ -326,7 +329,7 @@ yum install supervisor -y
 ```
 chkconfig supervisord on
 ```
-We now have to configure the actual workers that `supervisord` will manage. We do this by adding `program` configuration blocks to `/etc/supervisord.conf`. The sample below can simply be added to the bottom of the existing configuration file.  
+We now have to configure the actual workers that `supervisord` will manage. We do this by adding `program` configuration blocks to `/etc/supervisord.conf`. The sample below can simply be added to the bottom of the existing configuration file.
 **Note** The sample has the program defined as [program:seat1]. If you want to run 4 workers, you need to add this to the supervisord.conf 4 times. So you will have 4 blocks with incrementing numbers ie. [program:seat1], [program:seat2], [program:seat3] & [program:seat4]. You also have to keep in mind where the `artisan` file is located. If you followed this guide to the T, it will be at `/var/www/seat/artisan`.
 
 So, open up `/etc/supervisord.conf` and paste the below block in at the bottom of the file:
@@ -355,7 +358,7 @@ seat1          RUNNING    pid 2677, uptime 0:01:13
 If you do not have output such as in the above block, check the log files for any possible errors.
 
 ### crontab
-So far, we have SeAT workers running meaning that it is ready to process jobs that enter the Queue. We now need a way to add jobs to that Queue for processing by the workers.  
+So far, we have SeAT workers running meaning that it is ready to process jobs that enter the Queue. We now need a way to add jobs to that Queue for processing by the workers.
 SeAT has a build in schedule for when what should run at which interval. With the cronjob, we are simply telling SeAT to check every minute "is there anything we should be doing?". We will add the cronjob as the `apache` user as this is the user that has had all its [permissions](#seat-permissions) configured earlier.
 
 Open up the crontab for `apache` with:

@@ -17,7 +17,7 @@ Packages are installed using the `aptitude` package manager as the `root` user.
  7. [SeAT - Setup](#seat-setup)
  8. [Supervisor](#supervisor)
  9. [Crontab](#crontab)
- 10. [Webserver - Apache](#webserver---apache)  
+ 10. [Webserver - Apache](#webserver---apache)
    i. [Virtual Host Setup](#virtual-host-setup)
 
 ### database
@@ -32,7 +32,7 @@ You should see output similar to the following:
 
 ```
 
-Next, we are going to secure the database server by removing anonymous access and setting a `root` password.  
+Next, we are going to secure the database server by removing anonymous access and setting a `root` password.
 
 ***
 **NOTE** The database `root` password should not be confused with the operating systems `root` passwords. They are both completely different. They should also not be the same password.
@@ -166,7 +166,7 @@ Finally, we get to install SeAT itself. The first thing we need to do is to deci
 ```
 cd /var/www
 ```
-Next, we will download SeAT using `composer` and save it to the `seat` directory.  
+Next, we will download SeAT using `composer` and save it to the `seat` directory.
 **NOTE** This can take some time, Composer does a ton of magic here :+1: (like recursively resolving all dependencies :O)
 ```
 composer create-project eveseat/seat seat --keep-vcs --prefer-source --no-dev
@@ -220,6 +220,9 @@ php artisan eve:update-sde -n
 ```
 php artisan seat:admin:reset
 ```
+```
+php artisan seat:admin:email
+```
 
 ### supervisor
 SeAT makes use of workers to actually process the update jobs that get scheduled. Think if the architecture as someone coming and dumping mail at the postoffice, and its up to say 4 workers to dig through the mail and sort it. Those 4 workers need a manager to ensure that they keep working. `supervisord` is a excellent candidate for the manager job.
@@ -255,7 +258,7 @@ seat1          RUNNING    pid 2677, uptime 0:01:13
 If you do not have output such as in the above block, check the log files for any possible errors.
 
 ### crontab
-So far, we have SeAT workers running meaning that it is ready to process jobs that enter the Queue. We now need a way to add jobs to that Queue for processing by the workers.  
+So far, we have SeAT workers running meaning that it is ready to process jobs that enter the Queue. We now need a way to add jobs to that Queue for processing by the workers.
 SeAT has a build in schedule for when what should run at which interval. With the cronjob, we are simply telling SeAT to check every minute "is there anything we should be doing?". We will add the cronjob as the `www-data` user as this is the user that has had all its [permissions](#seat-permissions) configured earlier.
 
 Open up the crontab for `www-data` with:
