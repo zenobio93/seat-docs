@@ -3,6 +3,12 @@
 # eveapi change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.14
+```
+c812028 (tag: 1.0.14) Version Bump
+55f1ade Fix eveseat/seat#100 by finding by primary key only.
+4451000 Fix eveseat/seat#99 by cleaning up after a key is deleted
+```
 ### 1.0.13
 ```
 8f8e0b1 (tag: 1.0.13) Version Bump
@@ -11,7 +17,6 @@ e9db18e Add a block if an admin contact email has not been set.
 ccc7a08 Fix XSD as 2 new endpoints have been added, bumping accessMask to long type
 85b21b0 Disable keys that respond with HTTP 403 in APIKeyInfo
 ```
-
 ### 1.0.12
 ```
 56c8444 (tag: 1.0.12) Version Bump
