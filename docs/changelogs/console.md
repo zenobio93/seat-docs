@@ -3,19 +3,22 @@
 # console change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.12
+```
+a6e5e54 (tag: 1.0.12) Version Bump
+0c9f1c7 Add a console command to set the admin email address
+```
 ### 1.0.11
 ```
 53fda6e (tag: 1.0.11) Version Bump
 bb9841c Fix eveseat/seat#83 by ensuring seat:admin:reset recovers admin roles
 ```
-
 ### 1.0.10
 ```
 8fb5ad1 (tag: 1.0.10) Version Bump
 3e1dca5 Update copyright
 d4b2b6f Code style fix
 ```
-
 ### 1.0.9
 ```
 68e5638 (tag: 1.0.9) Version Bump
