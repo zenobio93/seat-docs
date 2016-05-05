@@ -3,7 +3,7 @@
 
 Please refer to the index on the side for installation instructions, documentation about SeAT internals and or development guidelines!
 
-## one line upgrader 
+## one line upgrader
 ([source](https://github.com/eveseat/scripts/blob/master/upgrade/upgrade-seat.sh))
 ```bash
 curl -O https://raw.githubusercontent.com/eveseat/scripts/master/upgrade/upgrade-seat.sh && bash upgrade-seat.sh
@@ -25,6 +25,11 @@ curl -O https://raw.githubusercontent.com/eveseat/scripts/master/install/centos-
 * Ubuntu 14.04.x ([source](https://github.com/eveseat/scripts/blob/master/install/ubuntu-14-04-x.sh))
 ```bash
 curl -O https://raw.githubusercontent.com/eveseat/scripts/master/install/ubuntu-14-04-x.sh && bash ubuntu-14-04-x.sh
+```
+
+* Ubuntu 16.04.x ([source](https://github.com/eveseat/scripts/blob/master/install/ubuntu-16-04-x.sh))
+```bash
+curl -O https://raw.githubusercontent.com/eveseat/scripts/master/install/ubuntu-16-04-x.sh && bash ubuntu-16-04-x.sh
 ```
 
 ## want to help?
