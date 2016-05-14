@@ -3,7 +3,7 @@
 ## introduction
 SeAT supports authenticating users using CCP's EVE SSO services. Technical details behind the SSO implementation can be found [here](https://eveonline-third-party-documentation.readthedocs.io/en/latest/sso/index.html).
 
-Authenticating users using SSO effectively means that users may authenticate to SeAT using only their existing EVE Online credentials, and not have to worry about another set of credentials for SeAT. You *do not* have access to the credentials itself as that is handled entirely by CCP. Only once authentication is succesful from an EVE Online perspective will the users browser redirect back with a user object provided by CCP. We use this user object to auth the user in SeAT.
+Authenticating users using SSO effectively means that users may authenticate to SeAT using only their existing EVE Online credentials, and not have to worry about another set of credentials for SeAT. You *do not* have access to the credentials itself as that is handled entirely by CCP. Only once authentication is successful from an EVE Online perspective will the users browser redirect back with a user object provided by CCP. We use this user object to auth the user in SeAT.
 
 EVE SSO Support is not enabled by default as it requires some setup steps unique to your install.
 
@@ -27,7 +27,7 @@ Give your application a **meaningful** *Name* and a *Description*.
 
 Next, set the connection type to *Authentication Only* and specify the *Callback URL*
 
-**Note on the Callback URL**: This is the URL that the user should be redirected to once authentication was succesful. In the example, we can see it is `https://seat.test/auth/eve/callback`. You should replace the `seat.test` part with *your* domain! In other words, lets say you are hosting SeAT at `https://this.is.seat/`, then the Callback URL will be `https://this.is.seat/auth/eve/callback`. If you have SeAT in a sub folder on your web server, remember to prepend the folder name before `/auth/eve/callback`.
+**Note on the Callback URL**: This is the URL that the user should be redirected to once authentication was successful. In the example, we can see it is `https://seat.test/auth/eve/callback`. You should replace the `seat.test` part with *your* domain! In other words, lets say you are hosting SeAT at `https://this.is.seat/`, then the Callback URL will be `https://this.is.seat/auth/eve/callback`. If you have SeAT in a sub folder on your web server, remember to prepend the folder name before `/auth/eve/callback`.
 
 ![new sso application](https://i.imgur.com/0laFISb.png)
 
@@ -44,12 +44,12 @@ EVE SSO Support was added later (version [1.0.12](https://github.com/eveseat/sea
     'eveonline' => [
 ```
 
-If you get no output from that commnad, it may mean that you have to add a few lines to `config/services.php`. Refer to [this file](https://github.com/eveseat/seat/blob/b067bd3e742a79c35b5fa44ff77380a9187a27cf/config/services.php) for an example on how it should look.
+If you get no output from that command, it may mean that you have to add a few lines to `config/services.php`. Refer to [this file](https://github.com/eveseat/seat/blob/b067bd3e742a79c35b5fa44ff77380a9187a27cf/config/services.php) for an example on how it should look.
 
 ## 3. set config parameters in `.env` file
-We alost done. We just have to add the configuration parameters to our SeAT installs `.env` file. Browse to your SeAT installation directory and edit the `.env` file (note this is a hidden file and wont show up when you just type `ls`).
+We almost done. We just have to add the configuration parameters to our SeAT installs `.env` file. Browse to your SeAT installation directory and edit the `.env` file (note this is a hidden file and wont show up when you just type `ls`).
 
-Look for the following section towards the end of the file and populate the values with those you got when you created an application on the developers site (if you dont have these options in your `.env` file, feel free to just add it as you may have installed SeAT before SSO support was added):
+Look for the following section towards the end of the file and populate the values with those you got when you created an application on the developers site (if you don’t have these options in your `.env` file, feel free to just add it as you may have installed SeAT before SSO support was added):
 
 ```
 EVE_CLIENT_ID=null
