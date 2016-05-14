@@ -3,6 +3,13 @@
 # web change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.26
+```
+981ccc4 (tag: 1.0.26) Version Bump
+0796b2c Allow SSO to be enabled/disabled via the web interface.
+7a605be Give accounts a temp email address and flag Sso created accounts
+6efc9bf Add first support for the EVE Online SSO
+```
 ### 1.0.25
 ```
 168bb3e (tag: 1.0.25) Version Bump
@@ -15,7 +22,6 @@ e1cd641 Fix eveseat/seat#78 by adding a link to view one mail only
 a5d1f8f Fix eveseat/seat#65 by setting the key_id in the model
 9884772 fix reinforcement time using API stateTimeStamp (#24)
 ```
-
 ### 1.0.24
 ```
 c20194b (tag: 1.0.24) Version Bump

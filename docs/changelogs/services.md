@@ -3,6 +3,11 @@
 # services change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.17
+```
+e35f552 (tag: 1.0.17) Version Bump
+10c4a86 Set default values for 'allow_sso'
+```
 ### 1.0.16
 ```
 439fbac (tag: 1.0.16) Version Bump
@@ -11,7 +16,6 @@ d7b7eaf Add the search service
 ce085f7 Fix eveseat/seat#93 by filtering corporation_account_balances too
 0c03b8e Modify timeline method to retrive one specific message
 ```
-
 ### 1.0.15
 ```
 570bbd0 (tag: 1.0.15) Version Bump
