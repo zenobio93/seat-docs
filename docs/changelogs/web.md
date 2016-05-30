@@ -3,6 +3,11 @@
 # web change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.27
+```
+7689032 (tag: 1.0.27) Version Bump
+c036c44 Update Provider with new method name.
+```
 ### 1.0.26
 ```
 981ccc4 (tag: 1.0.26) Version Bump
