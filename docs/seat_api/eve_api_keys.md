@@ -1,0 +1,165 @@
+![SeAT](http://i.imgur.com/aPPOxSK.png)
+
+# EVE API Keys
+
+All endpoints in this document are for version1 (`/api/v1`) of the SeAT API.  
+All methods below have the requests and responses sampled using [httpie](https://github.com/jkbrzt/httpie).
+
+# Available Methods
+* [List All](#list-all-eve-api-keys)
+* [List Single](#get-a-single-eve-api-key)
+* [Add an EVE API Key](#add-an-eve-api-key)
+* [Edit an EVE API Key](#edit-an-eve-api-key)
+* [Delete an EVE API Key](#delete-an-eve-api-key)
+* [Transfer an EVE API Key](#transfer-an-eve-api-key)
+
+***
+
+### List all EVE API Keys
+ * HTTP Verb: **GET**
+ * Endpoint: `/api/v1/key`
+ * Parameters: None
+ * Description: *List all recorded EVE API Keys from the database.*
+ * Sample Request:
+```bash
+http get http://localhost:8000/api/v1/key Accept:application/json X-Token:123456
+```
+ * Sample Response:
+```json
+{
+    "created_at": "2015-11-21 14:12:40",
+    "disabled_calls": null,
+    "enabled": 1,
+    "key_id": 123445,
+    "last_error": "221:Illegal page request! Please verify the access granted by the key you are using!",
+    "updated_at": "2015-11-21 14:14:11",
+    "user_id": 1,
+    "v_code": "IDT1wqjWtl9QGFGHPb5Zj0kle7EnQxWDiscH64aN44qhE07oOBTfCCLFmc3uj2Hf"
+}
+```
+
+***
+
+### Get a single EVE API Key
+ * HTTP Verb: **GET**
+ * Endpoint: `/api/v1/key/{key_id}`
+ * Parameters:
+  1. *key_id* - The keyID to retrieve
+ * Description: *Get details for a single EVE API Key.*
+ * Sample Request:
+```bash
+http get http://localhost:8000/api/v1/key/123445 Accept:application/json X-Token:123456
+```
+ * Sample Response:
+```json
+{
+    "characters": [
+        {
+            "characterID": 123456,
+            "characterName": "ABC",
+            "corporationID": 123456,
+            "corporationName": "Garoun Investment Bank",
+            "created_at": "2015-12-02 10:48:31",
+            "id": 452,
+            "keyID": 123456,
+            "updated_at": "2015-12-02 10:48:31"
+        }
+    ],
+    "created_at": "2015-12-29 13:37:47",
+    "disabled_calls": null,
+    "enabled": 1,
+    "info": {
+        "accessMask": 1073741823,
+        "created_at": "2015-12-02 10:48:31",
+        "expires": null,
+        "keyID": 123456,
+        "type": "Account",
+        "updated_at": "2015-12-02 10:48:31"
+    },
+    "key_id": 123456,
+    "last_error": null,
+    "updated_at": "2016-01-06 04:53:05",
+    "user_id": 10,
+    "v_code": "pTySpi19ChY18jKbQdSmDoA9zStDkbv5MYJDHm0aKtypa2IwjIDOXVNp9tfSFPfu"
+}
+```
+
+***
+
+### Add an EVE API Key
+ * HTTP Verb: **POST**
+ * Endpoint: `/api/v1/key`
+ * Parameters:
+  1. *key_id* - The keyID to add
+  2. *v_code* - The vCode to add
+ * Description: *Add an EVE API key to the database*
+ * Sample Request:
+```bash
+http post http://localhost:8000/api/v1/key Accept:application/json X-Token:123456 key_id=123 v_code=JYKyPvIv75PN58UWcRcPHrtYKb4ySThFBk3n2qN4eaYGgCr1mrJbOwvQfHqNnf5k
+```
+ * Sample Response:
+```json
+[
+    "ok"
+]
+```
+
+***
+
+### Edit an EVE API Key
+ * HTTP Verb: **PUT**
+ * Endpoint: `/api/v1/key/{key_id}`
+ * Parameters:
+  1. *key_id* - The keyID to update
+  2. All other values are optional to update the key
+ * Description: *Edit an EVE API key in the database*
+ * Sample Request:
+```bash
+# sets an api key to enabled for the eveapi updater
+http put http://localhost:8000/api/v1/key/1234 Accept:application/json X-Token:123456 enabled=1
+```
+ * Sample Response:
+```json
+[
+    "ok"
+]
+```
+
+***
+
+### Delete an EVE API Key
+ * HTTP Verb: **DELETE**
+ * Endpoint: `/api/v1/key/{key_id}`
+ * Parameters:
+  1. *key_id* - The keyID to delete
+ * Description: *Delete an EVE API key from the database*
+ * Sample Request:
+```bash
+http delete http://localhost:8000/api/v1/key/1234 Accept:application/json X-Token:123456
+```
+ * Sample Response:
+```json
+[
+    "ok"
+]
+```
+
+***
+
+### Transfer an EVE API Key
+ * HTTP Verb: **GET**
+ * Endpoint: `/api/v1/key/transfer/{key_id}/{user_id}`
+ * Parameters:
+  1. *key_id* - The keyID to transfer
+  2. *user_id* - The SeAT User id to get key ownership
+ * Description: *Transfer ownership of an EVE API Key.*
+ * Sample Request:
+```bash
+http get http://localhost:8000/api/v1/key/transfer/123456/10 Accept:application/json X-Token:123456
+```
+ * Sample Response:
+```json
+[
+    "ok"
+]
+```

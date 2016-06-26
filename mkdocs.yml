@@ -17,6 +17,13 @@ pages:
         - Mailgun Setup: email/mailgun.md
     - Admin Guides:
         - Configuring Eve Online SSO: admin_guides/sso.md
+    - SeAT API:
+        - Overview: seat_api/overview.md
+        - EVE Api Keys: seat_api/eve_api_keys.md
+        - SeAT Users: seat_api/seat_users.md
+        - SeAT Roles, Permissions and Authorization: seat_api/roles_permissions.md
+        - Characters: seat_api/characters.md
+        - Corporations: seat_api/corporations.md
     - Changelogs:
         - Api: changelogs/api.md
         - Console: changelogs/console.md
@@ -33,8 +40,6 @@ pages:
         - Service: configuration/service.md
         - Web: configuration/web.md
         - Other: configuration/other.md
-    - Integration:
-        - SeAT API: seat_api.md
     - Eve XML API Updater:
         - Job Queue Flow: eve_xml_api_updater/job_queue_flow.md
     - Developing For SeAT:
