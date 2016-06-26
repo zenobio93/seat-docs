@@ -3,6 +3,13 @@
 # web change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.28
+```
+4e5225e (tag: 1.0.28) Version Bump
+5b2443b FIx indentation
+f9b6ee8 Added total values to the Bounty Prizes and PI monthly ledgers. (#25)
+21fc0d9 Remove logic that is now in the service repository.
+```
 ### 1.0.27
 ```
 7689032 (tag: 1.0.27) Version Bump

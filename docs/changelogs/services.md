@@ -3,6 +3,12 @@
 # services change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.18
+```
+b3d538d (tag: 1.0.18) Version Bump
+305a3ab Sort killmails by newest first.
+2edf0fd Add module info if a single starbases' info is called
+```
 ### 1.0.17
 ```
 e35f552 (tag: 1.0.17) Version Bump

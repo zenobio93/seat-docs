@@ -3,6 +3,12 @@
 # api change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.11
+```
+d35e7ef (tag: 1.0.11) Version Bump
+60475a4 Add /api/v1/corporation/assets-contents/{corp_id} endpoint
+530703c Add missing PPHDoc comment for argument
+```
 ### 1.0.10
 ```
 3faff1e (tag: 1.0.10) Version Bump
