@@ -11,6 +11,9 @@ Quickly install SeAT with the following command:
 bash <(curl -fsSL https://raw.githubusercontent.com/eveseat/scripts/master/install/installer.sh)
 ```
 
+To see the installer in action, click the image below:
+[![asciicast](https://asciinema.org/a/3zeyegk50qss86asaxfcb2yan.png)](https://asciinema.org/a/3zeyegk50qss86asaxfcb2yan)
+
 ## one line upgrader ([source](https://github.com/eveseat/scripts/blob/master/upgrade/upgrade-seat.sh))
 Upgrade your installation of SeAT with the following command:
 ```bash
