@@ -9,6 +9,7 @@ All methods below have the requests and responses sampled using [httpie](https:/
 * [All](#all-corporations)
 * [Assets](#corporation-assets)
 * [Assets by Location](#corporation-assets-by-location)
+* [Assets Contents](#corporation-assets-contents)
 * [Bookmarks](#corporation-bookmarks)
 * [Contacts](#corporation-contacts)
 * [Contracts](#corporation-contracts)
@@ -217,6 +218,85 @@ Sample Response:
 ```
 
 ***
+
+### Corporation Assets Contents
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/assets-contents/{corporation_id}/{parent_asset_id?}/{$parent_item_id?}` |
+| Description   | Get a corporations assets contents. Supplying the parent_asset_id and or parent_item_id will filter the response down to only those assets. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+|     |  **parent_asset_id** - (optional, required if used with parent_item_id) The parent asset ID for the query  |
+|     |  **parent_item_id** - (optional) The parent item ID in the asset id for the query  |
+
+Sample Request:
+```bash
+http get http://localhost:8000/api/v1/corporation/assets-contents/123456 Accept:application/json X-Token:123456
+```
+
+Sample Response:
+```json
+[
+    {
+        "basePrice": "1000.0000",
+        "capacity": 0,
+        "corporationID": 123456,
+        "created_at": "2015-12-28 10:06:21",
+        "description": "An unstable compound of strontium molecules encased in the crystal structure of water. When fed to a Control Tower's force field generator, these clathrates bond with the molecules already in place in the field to create a nigh-invulnerable barrier of energy. A necessary ingredient for Control Towers to go into reinforced mode.\r\n\r\nMay be obtained by reprocessing the following ice ores:\r\n\r\n<color='0xFF33FFFF'>1.0</color> security status solar system or lower:\r\n<a href=showinfo:16264>Blue Ice</a>\r\n<a href=showinfo:16262>Clear Icicle</a>\r\n<a href=showinfo:16263>Glacial Mass</a>\r\n<a href=showinfo:16265>White Glaze</a>\r\n\r\n<color='0xFFFF6600'>0.3</color> security status solar system or lower:\r\n<a href=showinfo:16266>Glare Crust</a>\r\n\r\n<color='0xFFE53300'>0.1</color> security status solar system or lower:\r\n<a href=showinfo:16267>Dark Glitter</a>\r\n\r\n<color='0xFFFF0000'>0.0</color> security status solar system or lower:\r\n<a href=showinfo:17978>Enriched Clear Icicle</a>\r\n<a href=showinfo:16268>Gelidus</a>\r\n<a href=showinfo:16269>Krystallos</a>\r\n<a href=showinfo:17976>Pristine White Glaze</a>\r\n<a href=showinfo:17977>Smooth Glacial Mass</a>\r\n<a href=showinfo:17975>Thick Blue Ice</a>",
+        "flag": 122,
+        "graphicID": 0,
+        "groupID": 423,
+        "iconID": 2696,
+        "itemID": 123456,
+        "marketGroupID": 1033,
+        "mass": 0,
+        "parentAssetItemID": 123456,
+        "parentItemID": null,
+        "portionSize": 1,
+        "published": 1,
+        "quantity": 4166,
+        "raceID": null,
+        "rawQuantity": 0,
+        "singleton": 0,
+        "soundID": null,
+        "typeID": 16275,
+        "typeName": "Strontium Clathrates",
+        "updated_at": "2015-12-28 10:06:21",
+        "volume": 3
+    },
+    {
+        "basePrice": "95.0000",
+        "capacity": 0,
+        "corporationID": 123456,
+        "created_at": "2015-12-28 10:06:21",
+        "description": "Frustrated with the inefficiencies involved in tracking multiple fuel types, Thukker logisticians pioneered the development of prepackaged fuel. In YC 111, after a successful trial period, they converted the Tribe's entire starbase network to use fuel blocks. Capsuleers were forced to wait for this innovation while CONCORD dithered over how to handle the transition period, but were finally granted clearance in YC113.\r\n\r\nThis is a block of fuel designed for Minmatar control towers. Forty blocks are sufficient to run a standard large tower for one hour, while medium and small towers require twenty and ten blocks respectively over the same period.",
+        "flag": 0,
+        "graphicID": 0,
+        "groupID": 1136,
+        "iconID": 10836,
+        "itemID": 123456,
+        "marketGroupID": 1870,
+        "mass": 0,
+        "parentAssetItemID": 123456,
+        "parentItemID": null,
+        "portionSize": 40,
+        "published": 1,
+        "quantity": 2857,
+        "raceID": null,
+        "rawQuantity": 0,
+        "singleton": 0,
+        "soundID": null,
+        "typeID": 4246,
+        "typeName": "Hydrogen Fuel Block",
+        "updated_at": "2015-12-28 10:06:21",
+        "volume": 5
+    }
+]
+```
+
+***
+
 
 ### Corporation Bookmarks
 
