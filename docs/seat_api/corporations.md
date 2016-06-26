@@ -31,15 +31,19 @@ All methods below have the requests and responses sampled using [httpie](https:/
 ***
 
 ### All Corporations
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/all`
- * Parameters: None  
- * Description: *Get corporations known to SeAT.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/all` |
+| Description   | Get corporations known to SeAT. |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/all Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -75,16 +79,20 @@ http get http://localhost:8000/api/v1/corporation/all Accept:application/json X-
 ***
 
 ### Corporation Assets
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/assets/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations assets list.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/assets/{corporation_id}` |
+| Description   | Get a corporations assets list. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/assets/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -125,16 +133,20 @@ http get http://localhost:8000/api/v1/corporation/assets/123456 Accept:applicati
 ***
 
 ### Corporation Assets by Location
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/assets-by-location/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations assets list grouped by locationID. This endpoint only returns assets that are in space.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/assets-by-location/{corporation_id}` |
+| Description   | Get a corporations assets list grouped by locationID. This endpoint only returns assets that are in space. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/assets-by-location/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "123456": [
@@ -207,16 +219,20 @@ http get http://localhost:8000/api/v1/corporation/assets-by-location/123456 Acce
 ***
 
 ### Corporation Bookmarks
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/bookmarks/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations bookmarks.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/bookmarks/{corporation_id}` |
+| Description   | Get a corporations bookmarks. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/bookmarks/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -246,16 +262,20 @@ http get http://localhost:8000/api/v1/corporation/bookmarks/123456 Accept:applic
 ***
 
 ### Corporation Contacts
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/assets/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations contacts list.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/contacts/{corporation_id}` |
+| Description   | Get a corporations contacts list. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/contacts/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -274,63 +294,20 @@ http get http://localhost:8000/api/v1/corporation/contacts/123456 Accept:applica
 ***
 
 ### Corporation Contracts
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/contracts/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations contracts list.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/contracts/{corporation_id}` |
+| Description   | Get a corporations contracts list. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/contracts/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
-```json
-[
-    {
-        "acceptorID": 123456,
-        "assigneeID": 123456,
-        "availability": "Private",
-        "buyout": "0.00",
-        "collateral": "0.00",
-        "contractID": 98168646,
-        "corporationID": 123456,
-        "created_at": "2015-11-21 14:19:05",
-        "dateAccepted": "2015-10-28 22:57:33",
-        "dateCompleted": "2015-10-28 22:57:33",
-        "dateExpired": "2015-11-05 12:19:58",
-        "dateIssued": "2015-10-22 12:19:58",
-        "endStationID": 61000393,
-        "endlocation": "UMI-KK VII - 2Dont relist in my Fing station",
-        "forCorp": 0,
-        "issuerCorpID": 123456,
-        "issuerID": 123456,
-        "numDays": 0,
-        "price": "315000000.00",
-        "reward": "0.00",
-        "startStationID": 61000393,
-        "startlocation": "UMI-KK VII - 2Dont relist in my Fing station",
-        "status": "Completed",
-        "title": "heavy missile cerb",
-        "type": "ItemExchange",
-        "updated_at": "2015-11-21 14:19:05",
-        "volume": 92000
-    }
-]
-```
 
-***
-
-### Corporation Contracts
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/contracts/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations contracts list.*
- * Sample Request:
-```bash
-http get http://localhost:8000/api/v1/corporation/contracts/123456 Accept:application/json X-Token:123456
-```
- * Sample Response:
+Sample Response:
 ```json
 [
     {
@@ -368,16 +345,20 @@ http get http://localhost:8000/api/v1/corporation/contracts/123456 Accept:applic
 ***
 
 ### Corporation Customs Offices
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/pocos/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations customs offices.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/pocos/{corporation_id}` |
+| Description   | Get a corporations customs offices. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/pocos/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -409,16 +390,20 @@ http get http://localhost:8000/api/v1/corporation/pocos/123456 Accept:applicatio
 ***
 
 ### Corporation Industry
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/industry/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations industry jobs.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/industry/{corporation_id}` |
+| Description   | Get a corporations industry jobs. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/industry/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -465,16 +450,20 @@ http get http://localhost:8000/api/v1/corporation/industry/123456 Accept:applica
 ***
 
 ### Corporation Killmails
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/killmails/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations killmails.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/killmails/{corporation_id}` |
+| Description   | Get a corporations killmails. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/killmails/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -529,16 +518,20 @@ http get http://localhost:8000/api/v1/corporation/killmails/123456 Accept:applic
 ***
 
 ### Corporation Market Orders
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/market-orders/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations market orders.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/market-orders/{corporation_id}` |
+| Description   | Get a corporations market orders. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/market-orders/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 TBA
 ```
@@ -546,16 +539,20 @@ TBA
 ***
 
 ### Corporation Member Security
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/member-security/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations member security roles.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/member-security/{corporation_id}` |
+| Description   | Get a corporations member security roles. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/member-security/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -574,16 +571,20 @@ http get http://localhost:8000/api/v1/corporation/member-security/123456 Accept:
 ***
 
 ### Corporation Member Security Logs
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/member-security-logs/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations member security roles changelog.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/member-security-logs/{corporation_id}` |
+| Description   | Get a corporations member security roles change log. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/member-security-logs/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -606,16 +607,20 @@ http get http://localhost:8000/api/v1/corporation/member-security-logs/123456 Ac
 ***
 
 ### Corporation Member Security Titles
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/member-security-titles/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations member security titles assignments.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/member-security-titles/{corporation_id}` |
+| Description   | Get a corporations member security titles assignments. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/member-security-titles/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -633,16 +638,20 @@ http get http://localhost:8000/api/v1/corporation/member-security-titles/123456 
 ***
 
 ### Corporation Member Tracking
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/member-tracking/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations member tracking data.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/member-tracking/{corporation_id}` |
+| Description   | Get a corporations member tracking data. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/member-tracking/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -672,16 +681,20 @@ http get http://localhost:8000/api/v1/corporation/member-tracking/123456 Accept:
 ***
 
 ### Corporation Sheet
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/sheet/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations sheet.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/sheet/{corporation_id}` |
+| Description   | Get a corporations sheet. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/sheet/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "allianceID": 123456,
@@ -715,16 +728,20 @@ http get http://localhost:8000/api/v1/corporation/sheet/123456 Accept:applicatio
 ***
 
 ### Corporation Standings
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/standings/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations standings.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/standings/{corporation_id}` |
+| Description   | Get a corporations standings. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/standings/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -743,17 +760,21 @@ http get http://localhost:8000/api/v1/corporation/standings/123456 Accept:applic
 ***
 
 ### Corporation Starbases
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/starbases/{corporation_id}/{starbase_id?}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
-  2. *starbase_id* - An **optional** starbaseID to get details for
- * Description: *Get a corporations starbases.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/starbases/{corporation_id}/{starbase_id?}` |
+| Description   | Get a corporations starbases. If a starbaseID is set, mode details such as silo levels is also returned. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+|     |  **starbase_id** - An *optional* starbaseID to get details for  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/starbases/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -791,16 +812,20 @@ http get http://localhost:8000/api/v1/corporation/starbases/123456 Accept:applic
 ***
 
 ### Corporation Wallet Divisions
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/wallet-divisions/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations wallet divisions.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/wallet-divisions/{corporation_id}` |
+| Description   | Get a corporations wallet divisions. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/wallet-divisions/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -817,16 +842,20 @@ http get http://localhost:8000/api/v1/corporation/wallet-divisions/123456 Accept
 ***
 
 ### Corporation Wallet Journal
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/wallet-journal/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations wallet journal. Returns the last 1000 entries*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/wallet-journal/{corporation_id}` |
+| Description   | Get a corporations wallet journal. Returns the last 1000 entries. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/wallet-journal/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -857,16 +886,20 @@ http get http://localhost:8000/api/v1/corporation/wallet-journal/123456 Accept:a
 ***
 
 ### Corporation Wallet Transactions
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/corporation/wallet-transactions/{corporation_id}`
- * Parameters:
-  1. *corporation_id* - The corporationID for the query
- * Description: *Get a corporations wallet transactions. Returns the last 1000 entries*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/corporation/wallet-transactions/{corporation_id}` |
+| Description   | Get a corporations wallet transactions. Returns the last 1000 entries. |
+| Parameters    |  **corporation_id** - The corporationID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/corporation/wallet-transactions/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {

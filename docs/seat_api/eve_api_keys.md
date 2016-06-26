@@ -16,15 +16,19 @@ All methods below have the requests and responses sampled using [httpie](https:/
 ***
 
 ### List all EVE API Keys
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/key`
- * Parameters: None
- * Description: *List all recorded EVE API Keys from the database.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/key` |
+| Description   | List all recorded EVE API Keys from the database. |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/key Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "created_at": "2015-11-21 14:12:40",
@@ -41,16 +45,20 @@ http get http://localhost:8000/api/v1/key Accept:application/json X-Token:123456
 ***
 
 ### Get a single EVE API Key
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/key/{key_id}`
- * Parameters:
-  1. *key_id* - The keyID to retrieve
- * Description: *Get details for a single EVE API Key.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/key/{key_id}` |
+| Description   | Get details for a single EVE API Key. |
+| Parameters    |  **key_id** - The keyID to retrieve |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/key/123445 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "characters": [
@@ -87,17 +95,23 @@ http get http://localhost:8000/api/v1/key/123445 Accept:application/json X-Token
 ***
 
 ### Add an EVE API Key
- * HTTP Verb: **POST**
- * Endpoint: `/api/v1/key`
- * Parameters:
-  1. *key_id* - The keyID to add
-  2. *v_code* - The vCode to add
- * Description: *Add an EVE API key to the database*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **POST** |
+| Endpoint      | `/api/v1/key` |
+| Description   | Add an EVE API key to the database. |
+| Parameters    |  **key_id** - The keyID to add |
+|     |  **v_code** - The vCode to add |
+
+Sample Request:
 ```bash
-http post http://localhost:8000/api/v1/key Accept:application/json X-Token:123456 key_id=123 v_code=JYKyPvIv75PN58UWcRcPHrtYKb4ySThFBk3n2qN4eaYGgCr1mrJbOwvQfHqNnf5k
+http post http://localhost:8000/api/v1/key Accept:application/json X-Token:123456 \
+    key_id=123 \
+    v_code=JYKyPvIv75PN58UWcRcPHrtYKb4ySThFBk3n2qN4eaYGgCr1mrJbOwvQfHqNnf5k
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     "ok"
@@ -107,18 +121,22 @@ http post http://localhost:8000/api/v1/key Accept:application/json X-Token:12345
 ***
 
 ### Edit an EVE API Key
- * HTTP Verb: **PUT**
- * Endpoint: `/api/v1/key/{key_id}`
- * Parameters:
-  1. *key_id* - The keyID to update
-  2. All other values are optional to update the key
- * Description: *Edit an EVE API key in the database*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **PUT** |
+| Endpoint      | `/api/v1/key/{key_id}` |
+| Description   | Edit an EVE API key in the database. |
+| Parameters    |  **key_id** - The keyID to update |
+|     |  All other values are optional |
+
+Sample Request:
 ```bash
 # sets an api key to enabled for the eveapi updater
 http put http://localhost:8000/api/v1/key/1234 Accept:application/json X-Token:123456 enabled=1
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     "ok"
@@ -128,16 +146,20 @@ http put http://localhost:8000/api/v1/key/1234 Accept:application/json X-Token:1
 ***
 
 ### Delete an EVE API Key
- * HTTP Verb: **DELETE**
- * Endpoint: `/api/v1/key/{key_id}`
- * Parameters:
-  1. *key_id* - The keyID to delete
- * Description: *Delete an EVE API key from the database*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **DELETE** |
+| Endpoint      | `/api/v1/key/{key_id}` |
+| Description   | Delete an EVE API key from the database. |
+| Parameters    |  **key_id** - The keyID to delete |
+
+Sample Request:
 ```bash
 http delete http://localhost:8000/api/v1/key/1234 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     "ok"
@@ -147,17 +169,21 @@ http delete http://localhost:8000/api/v1/key/1234 Accept:application/json X-Toke
 ***
 
 ### Transfer an EVE API Key
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/key/transfer/{key_id}/{user_id}`
- * Parameters:
-  1. *key_id* - The keyID to transfer
-  2. *user_id* - The SeAT User id to get key ownership
- * Description: *Transfer ownership of an EVE API Key.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/key/transfer/{key_id}/{user_id}` |
+| Description   | Transfer ownership of an EVE API Key. |
+| Parameters    |  **key_id** - The keyID to transfer |
+|     |  **user_id** - he SeAT User id to get key ownership |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/key/transfer/123456/10 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     "ok"

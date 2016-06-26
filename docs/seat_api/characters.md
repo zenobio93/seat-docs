@@ -35,16 +35,20 @@ All methods below have the requests and responses sampled using [httpie](https:/
 ***
 
 ### Character Assets
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/assets/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters assets list.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/assets/{character_id}` |
+| Description   | Get a characters assets list. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/assets/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -86,16 +90,20 @@ http get http://localhost:8000/api/v1/character/assets/123456 Accept:application
 ***
 
 ### Character Bookmarks
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/bookmarks/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters bookmarks.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/bookmarks/{character_id}` |
+| Description   | Get a characters bookmarks. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/bookmarks/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -125,16 +133,20 @@ http get http://localhost:8000/api/v1/character/bookmarks/123456 Accept:applicat
 ***
 
 ### Character Channels
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/channels/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters chat channels.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/channels/{character_id}` |
+| Description   | Get a characters chat channels. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/channels/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -173,16 +185,20 @@ http get http://localhost:8000/api/v1/character/channels/123456 Accept:applicati
 ***
 
 ### Character Contacts
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/contacts/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters contacts list.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/contacts/{character_id}` |
+| Description   | Get a characters contacts list. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/contacts/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -202,16 +218,20 @@ http get http://localhost:8000/api/v1/character/contacts/123456 Accept:applicati
 ***
 
 ### Character Info
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/info/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get information about the character.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/info/{character_id}` |
+| Description   | Get information about the character. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/info/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "accountBalance": "9349819.63",
@@ -245,16 +265,20 @@ http get http://localhost:8000/api/v1/character/info/123456 Accept:application/j
 ***
 
 ### Character Industry
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/industry/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a list of the characters industry jobs.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/industry/{character_id}` |
+| Description   | Get a list of the characters industry jobs. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/industry/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -302,16 +326,20 @@ http get http://localhost:8000/api/v1/character/industry/123456 Accept:applicati
 ***
 
 ### Character Killmails
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/killmails/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a list of the characters killmails.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/killmails/{character_id}` |
+| Description   | Get a list of the characters killmails. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/killmails/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -366,16 +394,20 @@ http get http://localhost:8000/api/v1/character/killmails/123456 Accept:applicat
 ***
 
 ### Character Market Orders
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/market-orders/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a list of the characters market orders.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/market-orders/{character_id}` |
+| Description   | Get a list of the characters market orders. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+ Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/market-orders/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -424,16 +456,20 @@ http get http://localhost:8000/api/v1/character/market-orders/123456 Accept:appl
 ***
 
 ### Character Contracts
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/contracts/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a list of the characters contracts.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/contracts/{character_id}` |
+| Description   | Get a list of the characters contracts. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/contracts/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -471,16 +507,20 @@ http get http://localhost:8000/api/v1/character/contracts/123456 Accept:applicat
 ***
 
 ### Character Sheet
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/sheet/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters character sheet.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/sheet/{character_id}` |
+| Description   | Get a characters character sheet. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/sheet/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "DoB": "2006-11-16 05:36:00",
@@ -525,16 +565,20 @@ http get http://localhost:8000/api/v1/character/sheet/123456 Accept:application/
 ***
 
 ### Character Skills
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/skills/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters skills.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/skills/{character_id}` |
+| Description   | Get a characters skills. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/skills/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -571,16 +615,20 @@ http get http://localhost:8000/api/v1/character/skills/123456 Accept:application
 ***
 
 ### Character Skill In Training
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/skill-in-training/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a the current skill in training for a character.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/skill-in-training/{character_id}` |
+| Description   | Get a the current skill in training for a character. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/skill-in-training/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "basePrice": "4000000.0000",
@@ -614,16 +662,20 @@ http get http://localhost:8000/api/v1/character/skill-in-training/123456 Accept:
 ***
 
 ### Character Skill Queue
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/skill-queue/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a the current queue for a character.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/skill-queue/{character_id}` |
+| Description   | Get a the current queue for a character. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/skill-queue/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
    {
@@ -657,16 +709,20 @@ http get http://localhost:8000/api/v1/character/skill-queue/123456 Accept:applic
 ***
 
 ### Character Wallet Journal
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/wallet-journal/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters wallet journal. Returns the last 1000 entries*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/wallet-journal/{character_id}` |
+| Description   | Get a characters wallet journal. Returns the last 1000 entries. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/wallet-journal/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -698,16 +754,20 @@ http get http://localhost:8000/api/v1/character/wallet-journal/123456 Accept:app
 ***
 
 ### Character Wallet Transactions
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/wallet-transactions/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters wallet transactions. Returns the last 1000 entries*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/wallet-transactions/{character_id}` |
+| Description   | Get a characters wallet transactions. Returns the last 1000 entries. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/wallet-transactions/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -736,16 +796,20 @@ http get http://localhost:8000/api/v1/character/wallet-transactions/123456 Accep
 ***
 
 ### Character Employment History
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/employment-history/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters employment history.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/employment-history/{character_id}` |
+| Description   | Get a characters employment history. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/employment-history/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -763,16 +827,20 @@ http get http://localhost:8000/api/v1/character/employment-history/123456 Accept
 ***
 
 ### Character Implants
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/implants/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters implants.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/implants/{character_id}` |
+| Description   | Get a characters implants. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/implants/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -789,16 +857,20 @@ http get http://localhost:8000/api/v1/character/implants/123456 Accept:applicati
 ***
 
 ### Character Jump Clones
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/jump-clones/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters jump clones.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/jump-clones/{character_id}` |
+| Description   | Get a characters jump clones. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/jump-clones/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -831,16 +903,20 @@ http get http://localhost:8000/api/v1/character/jump-clones/123456 Accept:applic
 ***
 
 ### Character Account Info
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/account-info/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters account information.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/account-info/{character_id}` |
+| Description   | Get a characters account information. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/account-info/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "createDate": "2013-11-29 07:18:00",
@@ -856,16 +932,20 @@ http get http://localhost:8000/api/v1/character/account-info/123456 Accept:appli
 ***
 
 ### Character Mail
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/mail/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters mail.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/mail/{character_id}` |
+| Description   | Get a characters mail. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/mail/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -889,16 +969,20 @@ http get http://localhost:8000/api/v1/character/mail/123456 Accept:application/j
 ***
 
 ### Character Notifications
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/notifications/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters notifications.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/notifications/{character_id}` |
+| Description   | Get a characters notifications. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/notifications/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -921,16 +1005,20 @@ http get http://localhost:8000/api/v1/character/notifications/123456 Accept:appl
 ***
 
 ### Character Planetary Interaction
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/pi/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters planetary colonies.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/pi/{character_id}` |
+| Description   | Get a characters planetary colonies. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/pi/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -954,16 +1042,20 @@ http get http://localhost:8000/api/v1/character/pi/123456 Accept:application/jso
 ***
 
 ### Character Standings
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/standings/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters standings.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/standings/{character_id}` |
+| Description   | Get a characters standings. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/standings/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -982,16 +1074,20 @@ http get http://localhost:8000/api/v1/character/standings/123456 Accept:applicat
 ***
 
 ### Character Research
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/research/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters research.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/research/{character_id}` |
+| Description   | Get a characters research. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/research/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -1027,16 +1123,20 @@ http get http://localhost:8000/api/v1/character/research/123456 Accept:applicati
 ***
 
 ### Character Calendar Events
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/character/calendar/{character_id}`
- * Parameters:
-  1. *character_id* - The characterID for the query
- * Description: *Get a characters upcoming calendar events.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/character/calendar/{character_id}` |
+| Description   | Get a characters upcoming calendar events. |
+| Parameters    |  **character_id** - The characterID for the query  |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/character/calendar/123456 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {

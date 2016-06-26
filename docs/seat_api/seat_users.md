@@ -15,15 +15,19 @@ All methods below have the requests and responses sampled using [httpie](https:/
 ***
 
 ### List all Users
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/user`
- * Parameters: None
- * Description: *List all SeAT Users from the database.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/user` |
+| Description   | List all SeAT Users from the database. |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/user Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -52,16 +56,20 @@ http get http://localhost:8000/api/v1/user Accept:application/json X-Token:12345
 ***
 
 ### Show User Detail
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/user/{identifier}`
- * Parameters:
-  1. *identifier* - The identifier for the user. Can be either the user_id or name
- * Description: *Get details for a single SeAT User. Shows owned EVE API keys, Roles and Affiliations*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/user/{identifier}` |
+| Description   | Get details for a single SeAT User. Shows owned EVE API keys, Roles and Affiliations. |
+| Parameters    |  **identifier** - The identifier for the user. Can be either the user_id or name. |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/user/test Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "active": 0,
@@ -101,18 +109,23 @@ http get http://localhost:8000/api/v1/user/test Accept:application/json X-Token:
 ***
 
 ### Add a SeAT User
- * HTTP Verb: **POST**
- * Endpoint: `/api/v1/user`
- * Parameters:
-  1. *username* - The username
-  2. *email* - The email address
-  3. *password* - The password for the user
- * Description: *Adds a SeAT user*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **POST** |
+| Endpoint      | `/api/v1/user` |
+| Description   | Adds a SeAT user. |
+| Parameters    |  **username** - The username. |
+|     |  **email** - The email address. |
+|     |  **password** - The password for the user. |
+
+Sample Request:
 ```bash
-http post http://localhost:8000/api/v1/user Accept:application/json X-Token:123456 username=api_user email=test@localhost.local password=blahblah
+http post http://localhost:8000/api/v1/user Accept:application/json X-Token:123456 \
+    username=api_user email=test@localhost.local password=blahblah
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     "ok"
@@ -122,18 +135,23 @@ http post http://localhost:8000/api/v1/user Accept:application/json X-Token:1234
 ***
 
 ### Edit a User
- * HTTP Verb: **PUT**
- * Endpoint: `/api/v1/user/{identifier}`
- * Parameters:
-  1. *identifier* - The identifier for the user. Can be either the user_id or name
-  2. All other values are optional to update the key
- * Description: *Edit a SeAT User in the database*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **PUT** |
+| Endpoint      | `/api/v1/user/{identifier}` |
+| Description   | Edit a SeAT User in the database. |
+| Parameters    |  **identifier** - The identifier for the user. Can be either the user_id or name. |
+|     |  All other fields are optional. |
+
+Sample Request:
 ```bash
 # changes a users password and make the user active
-http put http://localhost:8000/api/v1/user/api_user Accept:application/json X-Token:123456 password=blahblahr active=1
+http put http://localhost:8000/api/v1/user/api_user Accept:application/json \
+    X-Token:123456 password=blahblahr active=1
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     "ok"
@@ -143,16 +161,20 @@ http put http://localhost:8000/api/v1/user/api_user Accept:application/json X-To
 ***
 
 ### Delete a User
- * HTTP Verb: **DELETE**
- * Endpoint: `/api/v1/user/{identifier}`
- * Parameters:
-  1. *identifier* - The identifier for the user. Can be either the user_id or name
- * Description: *Delete a SeAT User from the database*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **DELETE** |
+| Endpoint      | `/api/v1/user/{identifier}` |
+| Description   | Delete a SeAT User from the database. |
+| Parameters    |  **identifier** - The identifier for the user. Can be either the user_id or name. |
+
+Sample Request:
 ```bash
 http delete http://localhost:8000/api/v1/user/api_user Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     "ok"

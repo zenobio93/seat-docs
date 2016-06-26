@@ -16,15 +16,19 @@ All methods below have the requests and responses sampled using [httpie](https:/
 ***
 
 ### List all Roles
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/role`
- * Parameters: None
- * Description: *List all recorded Roles from the database.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/role` |
+| Description   | List all recorded Roles from the database. |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/role Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 [
     {
@@ -41,16 +45,20 @@ http get http://localhost:8000/api/v1/role Accept:application/json X-Token:12345
 ***
 
 ### Show Role Detail
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/role/{identifier}`
- * Parameters:
-  1. *identifier* - The identifier for the Role. Can be either the role_id or title
- * Description: *Get details for a single SeAT Role. Shows Users with the Role, Permissions as well as Affiliations*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/role/{identifier}` |
+| Description   | Get details for a single SeAT Role. Shows Users with the Role, Permissions as well as Affiliations. |
+| Parameters    |  **identifier** - The identifier for the Role. Can be either the role_id or title |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/role/2 Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "affiliations": [
@@ -112,15 +120,19 @@ http get http://localhost:8000/api/v1/role/2 Accept:application/json X-Token:123
 ***
 
 ### List all Permissions
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/role/query/permissions`
- * Parameters: None
- * Description: *List all of the possible SeAT Permissions.*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/role/query/permissions` |
+| Description   | List all of the possible SeAT Permissions. |
+
+Sample Request:
 ```bash
 http get http://localhost:8000/api/v1/role/query/permissions Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 {
     "0": "superuser",
@@ -157,19 +169,24 @@ http get http://localhost:8000/api/v1/role/query/permissions Accept:application/
 ***
 
 ### User has Role
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/role/query/role-check/{user_identifier}/{role_identifier}`
- * Parameters:
-  1. *user_identifier* - The identifier for the User. Can be either the user_id or name
-  2. *role_identifier* - The identifier for the Role. Can be either the role_id or title
- * Description: *Determine if a SeAT user has a specific SeAT Role*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/role/query/role-check/{user_identifier}/{role_identifier}` |
+| Description   | Determine if a SeAT user has a specific SeAT Role. |
+| Parameters    |  **user_identifier** - The identifier for the User. Can be either the user_id or name |
+|     |  **role_identifier** - The identifier for the Role. Can be either the role_id or title |
+
+Sample Request:
 ```bash
 // Note the quotes around the URL. If your role names have spaces in them,
 // make sure you properly url encode them before adding it to the URL itself.
-http get "http://localhost:8000/api/v1/role/query/role-check/admin/Corp Accountants" Accept:application/json X-Token:123456
+http get "http://localhost:8000/api/v1/role/query/role-check/admin/Corp Accountants" \
+    Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 true
 ```
@@ -177,17 +194,22 @@ true
 ***
 
 ### User has Permission
- * HTTP Verb: **GET**
- * Endpoint: `/api/v1/role/query/permission-check/{user_identifier}/{permission}`
- * Parameters:
-  1. *user_identifier* - The identifier for the User. Can be either the user_id or name
-  2. *permission* - The identifier for the Permission. Available permissions can be found at the [permissions list](#list-all-permissions)
- * Description: *Determine if a SeAT user has a specific SeAT Permission* **NOTE** This endpoint does not honor affiliation rules!**
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **GET** |
+| Endpoint      | `/api/v1/role/query/permission-check/{user_identifier}/{permission}` |
+| Description   | Determine if a SeAT user has a specific SeAT Permission. **NOTE** This endpoint does not honor affiliation rules! |
+| Parameters    |  **user_identifier** - The identifier for the User. Can be either the user_id or name. |
+|     |  **permission** - The identifier for the Permission. Available permissions can be found at the [permissions list](#list-all-permissions). |
+
+Sample Request:
 ```bash
-http get http://localhost:8000/api/v1/role/query/permission-check/test/corporation.assets Accept:application/json X-Token:123456
+http get http://localhost:8000/api/v1/role/query/permission-check/test/corporation.assets \
+    Accept:application/json X-Token:123456
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 false
 ```
@@ -195,17 +217,22 @@ false
 ***
 
 ### Validate SeAT Credentials
- * HTTP Verb: **POST**
- * Endpoint: `/api/v1/user/auth/login`
- * Parameters:
-  1. *username* - The username
-  2. *password* - The password for the user
- * Description: *Validates SeAT User Credentials*
- * Sample Request:
+
+| Type          | Detail  |
+| ------------- |--------|
+| HTTP Verb     | **POST** |
+| Endpoint      | `/api/v1/user/auth/login` |
+| Description   | Validates a SeAT accounts credentials |
+| Parameters    |  **username** - The username. |
+|     |  **password** - The password for the user. |
+
+Sample Request:
 ```bash
-http post http://localhost:8000/api/v1/user/auth/login Accept:application/json X-Token:123456 username=api_user password=blahblah
+http post http://localhost:8000/api/v1/user/auth/login Accept:application/json \
+    X-Token:123456 username=api_user password=blahblah
 ```
- * Sample Response:
+
+Sample Response:
 ```json
 true
 ```
