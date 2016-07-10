@@ -3,6 +3,12 @@
 # services change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.19
+```
+b2b9995 (tag: 1.0.19) Version Bump
+744e982 Paginate Killmails
+5711563 Paginate contracts. Part of the fix for eveseat/seat#111
+```
 ### 1.0.18
 ```
 b3d538d (tag: 1.0.18) Version Bump

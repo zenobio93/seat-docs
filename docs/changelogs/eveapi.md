@@ -3,6 +3,12 @@
 # eveapi change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.15
+```
+c02f338 (tag: 1.0.15) Version Bump
+3356cd0 Fix method comment
+bd3e928 Handle the `failed()` method on jobs by updating the `JobTracking`.
+```
 ### 1.0.14
 ```
 c812028 (tag: 1.0.14) Version Bump
