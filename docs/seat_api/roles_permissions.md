@@ -49,7 +49,7 @@ Sample Response:
 | Type          | Detail  |
 | ------------- |--------|
 | HTTP Verb     | **GET** |
-| Endpoint      | `/api/v1/role/{identifier}` |
+| Endpoint      | `/api/v1/role/detail/{identifier}` |
 | Description   | Get details for a single SeAT Role. Shows Users with the Role, Permissions as well as Affiliations. |
 | Parameters    |  **identifier** - The identifier for the Role. Can be either the role_id or title |
 
