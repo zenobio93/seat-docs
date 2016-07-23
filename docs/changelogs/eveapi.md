@@ -3,6 +3,11 @@
 # eveapi change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.17
+```
+d9af10e (tag: 1.0.17) Version Bump
+1267346 Remove DispatchesJobs trait and use Bus Facade
+```
 ### 1.0.16
 ```
 804bbdc (tag: 1.0.16) Version Bump

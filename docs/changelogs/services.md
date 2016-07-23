@@ -3,6 +3,10 @@
 # services change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.21
+```
+0ad3ccf (tag: 1.0.21) Version Bump
+```
 ### 1.0.20
 ```
 cfcefda (tag: 1.0.20) Version Bump
