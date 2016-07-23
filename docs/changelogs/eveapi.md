@@ -3,6 +3,13 @@
 # eveapi change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.16
+```
+804bbdc (tag: 1.0.16) Version Bump
+cfdf20c Report Exception types that have occured.
+69de2a2 Add timestamp to error.
+87efa4b Add model for the failed_jobs table
+```
 ### 1.0.15
 ```
 c02f338 (tag: 1.0.15) Version Bump

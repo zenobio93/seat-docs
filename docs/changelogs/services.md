@@ -3,6 +3,16 @@
 # services change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.20
+```
+cfcefda (tag: 1.0.20) Version Bump
+7fa3040 Add missing import of CharacterSheetCorporationTitles
+b4a8080 Set available options and defaults for usage tracking
+b2765c6 Add analytics Jobs using Google Analytics measurement protocol.
+9d23cb6 * Add corporation titles to character sheet (#7)
+26c1673 Fix eveseat/seat#112 by using an advanced where to group the filter (actually eveseat/seat#122)
+58cfc96 Add the `seat:queue:clear-expired` scheduled command
+```
 ### 1.0.19
 ```
 b2b9995 (tag: 1.0.19) Version Bump

@@ -3,6 +3,13 @@
 # console change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.13
+```
+974cfad (tag: 1.0.13) Version Bump
+f3f44dc Add analytics hit information.
+161cdee Add ClearExpired command
+a87e8d0 Add `seat:queue:clear-expired` command.
+```
 ### 1.0.12
 ```
 a6e5e54 (tag: 1.0.12) Version Bump

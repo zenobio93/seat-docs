@@ -3,6 +3,11 @@
 # api change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.13
+```
+b55b1aa (tag: 1.0.13) Version Bump
+8b80e11 Paginate the token logs
+```
 ### 1.0.12
 ```
 fbf3e88 (tag: 1.0.12) Version Bump

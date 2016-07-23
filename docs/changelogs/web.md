@@ -3,6 +3,15 @@
 # web change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.30
+```
+bc1f5ac (tag: 1.0.30) Version Bump
+33b0e03 Update full api mask (#31)
+ec19039 Add link to analytics doc
+ccd332d Add ability to disable tracking completely.
+c7372e9 Add corporation titles to character sheet
+b527652 Add contact tracking links into character and corporation contact list (#30)
+```
 ### 1.0.29
 ```
 bc76609 (tag: 1.0.29) Version Bump
