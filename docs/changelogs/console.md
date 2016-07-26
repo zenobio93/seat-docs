@@ -3,6 +3,11 @@
 # console change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.14
+```
+57132cf (tag: 1.0.14) Version Bump
+8c9abec Fix eveseat/seat#127 by removing string concatenation in Class property
+```
 ### 1.0.13
 ```
 974cfad (tag: 1.0.13) Version Bump
