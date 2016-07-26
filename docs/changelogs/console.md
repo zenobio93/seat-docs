@@ -3,6 +3,11 @@
 # console change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.15
+```
+43fc0b2 (tag: 1.0.15) Version Bump
+a1da1a0 Remove string concatenation causing systax errors
+```
 ### 1.0.14
 ```
 57132cf (tag: 1.0.14) Version Bump
