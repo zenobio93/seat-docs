@@ -3,6 +3,11 @@
 # services change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.22
+```
+a0a0c75 (tag: 1.0.22) Version Bump
+02ad71e Seed the expired job time to run every 6 hours
+```
 ### 1.0.21
 ```
 0ad3ccf (tag: 1.0.21) Version Bump

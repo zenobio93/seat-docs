@@ -3,6 +3,12 @@
 # console change logs
 Generated with: `git log --oneline --decorate`
 
+### 1.0.16
+```
+c356fd3 (tag: 1.0.16) Version Bump
+ebbebf2 Default to 6 hours to reap jobs
+40707ef Add missing trait
+```
 ### 1.0.15
 ```
 43fc0b2 (tag: 1.0.15) Version Bump
