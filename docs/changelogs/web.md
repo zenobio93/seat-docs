@@ -327,7 +327,7 @@ b9df4c4 Fix cases where keys with missing info would throw errors
 ee21c49 Style fixes
 1de991a Add ability to add new Api Keys
 358ba7f Make sidebar permissions aware
-41190e6 Introduce the Bouncer and hes Clipboard 🚪
+41190e6 Introduce the Bouncer and hes AccessChecker 🚪
 c2edc6b Use auth() helper instead of Auth Facade
 2a864dc Fix some inconsistency with edit/updater user lang
 e473bba Swap input for has to read better

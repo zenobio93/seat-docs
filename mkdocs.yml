@@ -19,6 +19,7 @@ pages:
         - Configuring Eve Online SSO: admin_guides/sso.md
         - Role Based Access Control: admin_guides/rbac.md
         - Understanding Tracking: admin_guides/tracking.md
+        - SeAT & Supervisor Integration: admin_guides/seat_supervisor.md
     - SeAT API:
         - Overview: seat_api/overview.md
         - EVE Api Keys: seat_api/eve_api_keys.md
