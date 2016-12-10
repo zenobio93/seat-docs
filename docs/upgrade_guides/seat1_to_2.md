@@ -103,7 +103,7 @@ $ php artisan migrate
 
 You will see a bunch of messages and eventually your shell prompt again, indicating that it has completed. If you receive errors here, double check that you have entered the correct database settings in the `.env` file previously mentioned.
 
-### databse seeders
+### database seeders
 
 With the database migration complete, its time to seed it with some of the static data SeAT needs. Do this with the following commands:
 
