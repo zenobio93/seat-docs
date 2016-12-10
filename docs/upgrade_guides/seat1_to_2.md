@@ -74,6 +74,10 @@ Updating dependencies
 [ ... snip ... ]
 ```
 
+### publish the assets
+
+Next, we need to publish the new SeAT 2.0 CSS & Javascript and database migrations. This can be done with `php artisan vendor:publish --force`.
+
 ### reconfigure `.env` file
 
 With the new code ready to use, the next thing that is required is to reconnect the database. Remember that `.env` file you backed up earlier? Refer to it for the values needed in the newly installed env file that can be found at `/var/www/seat/.env`.
@@ -112,10 +116,6 @@ php artisan db:seed --class=Seat\\Notifications\\database\\seeds\\ScheduleSeeder
 php artisan db:seed --class=Seat\\Services\\database\\seeds\\NotificationTypesSeeder
 php artisan db:seed --class=Seat\\Services\\database\\seeds\\ScheduleSeeder
 ```
-
-### publish the assets
-
-Next, we need to publish the new SeAT 2.0 CSS & Javascript. This can be done with `php artisan vendor:publish --force`.
 
 ### update worker jobs
 
