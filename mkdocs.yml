@@ -13,6 +13,8 @@ pages:
         - CentOS 7.x: setup_guides/centos7.md
         - Ubuntu 14.04.x: setup_guides/ubuntu1404.md
         - Upgrading SeAT: setup_guides/upgrade.md
+    - Upgrade Guides:
+        - SeAT 1.x to SeAT 2.0: upgrade_guides/seat1_to_2.md
     - Email:
         - Mailgun Setup: email/mailgun.md
     - Admin Guides:
