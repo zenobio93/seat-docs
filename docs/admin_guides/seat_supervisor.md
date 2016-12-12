@@ -6,24 +6,7 @@ SeAT is able to query a supervisor instance for worker statuses and other inform
 ![seat supervisor](https://i.imgur.com/fCnYQ08.png)
 
 ## requirements
-- Supervisor Monitoring need Supervisor version to be at least 3.0 or earlier. In order to check supervisor version, run `supervisord -v`
-
-### Update Supervisor on CentOS 6
-Centos is delivered with Supervisor prior to 3.x which is required by Supervisor Monitoring. Follow those steps in order to manually install an up to date package (thanks to basilisk):
-
-- Remove any existing supervisor using `yum remove supervisor`
-- Download GhettoForge auto-config package `cd /tmp && wget http://mirror.symnds.com/distributions/gf/el/6/gf/x86_64/gf-release-6-10.gf.el6.noarch.rpm`
-- Add GhettoForge repository with `yum install /tmp/gf-release-6-10.gf.el6.noarch.rpm`
-- Enable gf-plus for supervisor packages editing file `/etc/yum.repos.d/gf.repo`
-```
-[gf-plus]
-...
-enabled=1
-...
-includepkgs = supervisor* python*
-```
-- Reload package management cache using `yum update`
-- Install Supervisor running `yum install supervisor`
+Supervisor monitoring needs Supervisor version 3.0 or later. Check your supervisor version with `supervisord -v`. If you are running CentOS 6, please refer to the [updating supervisor on centos 6](#updating-supervisor-on-centos-6) section below before continuing.
 
 ## the config
 A bit of setup work is needed in order to have your SeAT setup query a supervisor instance. The basic idea to get this working is:
@@ -61,6 +44,42 @@ SUPERVISOR_GROUP=seat
 ```
 
 The defaults here should also be sufficient but feel free to adjust as needed.
+
+### updating supervisor on centos 6
+CentOS 6 ships with supervisor 2x by default. In order to get the supervisor monitoring to work, the following steps may be followed to upgrade your supervisor version.
+
+- Install the [GhettoForge](http://ghettoforge.org/) repository. This can be done with:
+
+```
+# Download and install the latest release
+GF=gf-release-6-10.gf.el6.noarch.rpm && curl -O http://mirror.symnds.com/distributions/gf/el/6/gf/x86_64/$GF && yum localinstall -y $GF && rm -f $GF
+
+# Import the GhettoForge signing keys
+rpm --import http://mirror.symnds.com/distributions/gf/RPM-GPG-KEY-gf.el6
+
+# Enable the repository
+yum install yum-utils -y
+yum-config-manager --enable gf-plus
+```
+
+- Next, install Supervisor by running `yum install supervisor -y`
+
+This will update your local installation to version 3x. Your old configuration will be saved in `/etc/supervisord.conf.rpmsave`. Supervisor 3 allows you to specify a `numprocs` setting in a command block instead of having to define multiple instances like you had to do with v2.x. You will need to create a file called `seat.ini` in `/etc/supervisord.d/`. This file should look something like this:
+
+```
+[program:seat]
+command=/usr/bin/php /var/www/seat/artisan queue:work --queue=high,medium,low,default --tries 1 --timeout=604800
+process_name = %(program_name)s-80%(process_num)02d
+stdout_logfile = /var/log/seat-80%(process_num)02d.log
+stdout_logfile_maxbytes=100MB
+stdout_logfile_backups=10
+numprocs=6
+directory=/var/www/seat
+stopwaitsecs=600
+user=apache
+```
+
+- Restart supervisor with `/etc/init.d/supervisord restart` and check that your workers are running again with `supervisorctl status`.
 
 ## troubleshooting
 In case something goes wrong, you have a few debugging options.
