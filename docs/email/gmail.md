@@ -15,7 +15,7 @@ MAIL_PORT=587
 MAIL_USERNAME=username@gmail.com
 MAIL_PASSWORD=gmailpassword
 MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=theninjabag@gmail.com
+MAIL_FROM_ADDRESS=username@gmail.com
 ```
 
 Done! To test, you can send yourself a password reset email.
