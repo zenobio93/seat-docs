@@ -23,6 +23,7 @@ pages:
         - Gmail Setup: email/gmail.md
     - Admin Guides:
         - Configuring Eve Online SSO: admin_guides/sso.md
+        - Scaled SeAT Deployments: admin_guides/scaling_seat.md
         - Role Based Access Control: admin_guides/rbac.md
         - Understanding Tracking: admin_guides/tracking.md
         - SeAT & Supervisor Integration: admin_guides/seat_supervisor.md
