@@ -6,22 +6,36 @@ This guide is going to assume a very confident level of Linux expertise too and 
 
 ### table of contents
  1. [Software](#software)
- 5. [Composer](#composer)
- 6. [SeAT - Download](#seat-download)
- 7. [SeAT - Permissions](#seat-permissions)
- 9. [SeAT - Setup](#seat-setup)
- 10. [Supervisor](#supervisor)
- 11. [Crontab](#crontab)
- 12. [Webserver](#webserver)
+ 2. [Software - PHP](#software---php)
+ 3. [Composer](#composer)
+ 4. [SeAT - Download](#seat-download)
+ 5. [SeAT - Permissions](#seat-permissions)
+ 6. [SeAT - Setup](#seat-setup)
+ 7. [Supervisor](#supervisor)
+ 8. [Crontab](#crontab)
+ 9. [Webserver](#webserver)
 
 ### software
-SeAT needs 3 major components. A MySQL (or MariaDB) database, Redis and `supervisord`. Using your operating systems package manager (or from source if you wish!), install the services. PHP needs to be at least version 7 and supervisor at least version 3. The following list gives a brakdown of the OS level dependencies needed by SeAT:
+SeAT needs 3 major components. A MySQL (or MariaDB) database, Redis and `supervisord`. Using your operating systems package manager (or from source if you wish!), install the services. PHP needs to be at least version 7 and supervisor at least version 3. The following list gives a breakdown of the OS level dependencies needed by SeAT:
 
 - mysqld
 - redis
 - supervisord
 - git
 - unzip
+
+### software - php
+There are also a few PHP 7 dependencies needed that should be installed. You can confirm if you are missing any by running `php -m` and comparing it to the following list:
+
+- mcrypt
+- intl
+- gd
+- PDO
+- pdo_mysql
+- curl
+- mbstring
+- dom
+- bz2
 
 ### composer
 SeAT makes use of the de-facto PHP dependency manager called [Composer](https://getcomposer.org/). Composer is required to both install and update SeAT at a later stage. It is for this reason that it is recommended that you install composer globally on your server so that you can access it by simply typing `composer`. Lets set that up by downloading Composer and saving it to `/usr/local/bin`:
