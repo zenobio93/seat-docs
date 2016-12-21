@@ -20,9 +20,9 @@ On your server where `supervisor` is running, open the configuration file `/etc/
 
 ```
 [inet_http_server]
-port = 127.0.0.1:9001
-username = seat
-password = your_secure_password
+port=127.0.0.1:9001
+username=seat
+password=your_secure_password
 ```
 
 Obviously, substitute the values with those that correspond with your environment. For most setups, the values in the example should be just fine.
