@@ -11,7 +11,7 @@ Supervisor monitoring needs Supervisor version 3.0 or later. Check your supervis
 ## the config
 A bit of setup work is needed in order to have your SeAT setup query a supervisor instance. The basic idea to get this working is:
 
-- Add a `[inet_http_server]` configuration block to your `supervisor.conf` file.
+- Add a `[inet_http_server]` configuration block to your `supervisor.conf` file and restart supervisor.
 - Add the username, password, ip and port of the supervisor instance to your SeAT `.env` configuration file.
 
 ## 1. add supervisor configuration block.
@@ -28,6 +28,8 @@ password=your_secure_password
 Obviously, substitute the values with those that correspond with your environment. For most setups, the values in the example should be just fine.
 
 ![seat supervisor config](https://i.imgur.com/6jVLsLv.png)
+
+Finally, restart supervisor itself.
 
 ## 2. configure SeAT with the new values.
 
@@ -86,4 +88,35 @@ In case something goes wrong, you have a few debugging options.
 
 - Obviously, first ensure that `supervisor` itself is running.
 - If the http interface is started on a remote server, ensure that no firewall is blocking TCP traffic to the destination server.
+- If you just added the `inet_http_server` configuration block, restart supervisor and then check back on the web interface.
+- Attempt to debug the connection using the [tinker](#troubleshooting-tinker-console) example below.
 - Hop onto Slack (details in the contact page) for help.
+
+## troubleshooting - tinker console
+Another option you have to try and figure out why your supervisor integration might not be working would be to attempt to mimic the calls SeAT makes to supervisor and looking for errors.
+
+Don't worry, this is easier than it looks!
+
+First, drop into a `tinker` shell by running `php artisan tinker`. This will drop you into a fully booted instance of SeAT:
+
+![seat tinker](https://i.imgur.com/eohUSMz.png)
+
+Next, copy and paste the following instantiation code into the console. This will initialize the object needed to connect to the supervisor `inet_http_server` using the configuration in your `.env` config file:
+
+```
+$supervisor = new Supervisor\Supervisor(config('web.supervisor.name'), config('web.supervisor.rpc.address'), config('web.supervisor.rpc.username'), config('web.supervisor.rpc.password'), (int) config('web.supervisor.rpc.port'));
+```
+
+Pasting that should result in output similar to the below screenshot:
+
+![seat tinker supervisor init](https://i.imgur.com/s2vmf3A.png)
+
+Finally, attempt to get the current running processes by running the following code:
+
+```
+$supervisor->getProcesses();
+```
+
+As you can see in my example below, the object is unable to connect to the supervisor inet_http_server. This could indicate a number of things and should hopefully help with troubleshooting any errors that may occur.
+
+![seat tinker supervisor init](https://i.imgur.com/PJC02j4.png)
