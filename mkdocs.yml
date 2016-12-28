@@ -27,6 +27,7 @@ pages:
         - Role Based Access Control: admin_guides/rbac.md
         - Understanding Tracking: admin_guides/tracking.md
         - SeAT & Supervisor Integration: admin_guides/seat_supervisor.md
+        - EVE Api Administrative Contact: admin_guides/eveapi_admin_contact.md
     - SeAT API:
         - Overview: seat_api/overview.md
         - EVE Api Keys: seat_api/eve_api_keys.md
