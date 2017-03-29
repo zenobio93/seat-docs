@@ -5,7 +5,7 @@ So, you want to write a SeAT package? Hopefully this guide helps you along the w
 This guide was written while writing the API package for SeAT [here](https://github.com/eveseat/api). I figured it would be best to try and capture the process as I am going through it to help in case I miss any important details.
 
 ## toc
-1. [Good Practices](#good-practices)
+1. [Best Practices](#best-practices)
 2. [Getting Started](#getting-started)
 3. [Service Provider](#service-provider)
 4. [Package Structure](#package-structure)
@@ -26,18 +26,17 @@ SeAT 2.x is written on [Laravel 5.3 LTS](http://laravel.com/docs/5.3). A **very*
 
 If you really want to start contributing packages, but juts cant get your head around this whole Laravel thing, then I can suggest you have a look at this excellent free course material covering the basics of what you will encounter in the SeAT codebase. [https://laracasts.com/series/laravel-5-fundamentals](https://laracasts.com/series/laravel-5-fundamentals)
 
-## good practices
-In order to ensure SeAT core stability, we've introduced few good practices which
-should help everyone to develop package in a convenient way.
-In addition, it should allow to keep a track to every third party package issues as well as their existence.
+## best practices
+In order to avoid conflicts with SeAT core, here are a few best practices which should help develop packages in isolation and prevent inconvenient conflicts in the future.
 
-- prefix your repository with `seat` (`seat-teamspeak`)
-- use the following prebuilt namespace `Author\Seat\Package\Whatever-you-want-from-here` (`Warlof\Seat\Teamspeak\Http`)
-- prefix the name of your table with both author and package (`warlof_teamspeak_users`)
-- avoid as much as possible to overload core tables
-- prefix your settings with both author and package (`warlof.teamspeak.address`)
-- prefix redis records with both author and package (`warlof.teamspeak.channels`)
-- in your `composer.json` file, fill `type` with `seat-plugin`
+- Prefix your github repository name with `seat` eg: `seat-teamspeak`.
+- Tag your github repository with `seat`.
+- Use a unique package namespace such as `Author\Seat\Package\` eg: `Warlof\Seat\Teamspeak\`.
+- Prefix your database table names with something unique to your package. eg `warlof_teamspeak_users`.
+- Do not modify core tables. This will break future updates for users of you package.
+- Prefix your settings with both an author and package eg: `warlof.teamspeak.address`.
+- Prefix redis records with both author and package eg: `warlof.teamspeak.channels`.
+- In your `composer.json` file, set the `type` to `seat-plugin`.
 
 ## getting started
 The very first thing to do is prepare the empty git repository on say Github, as well as the composer package itself. Clone a clean repo, and run `composer init`, answering any questions. Once that is done, edit the resultant `composer.json` and prepare the `autoload` block. SeAT core follows the [PSR-4](http://www.php-fig.org/psr/psr-4/) autoloading standard. I will suggest you do the same. For some more detailed composer info, refer to the docs [here](https://getcomposer.org/doc/01-basic-usage.md). For the API package, I am going to autoload **Seat\Api** from the `src` directory using PSR-4.
