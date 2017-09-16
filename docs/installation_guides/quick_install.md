@@ -19,5 +19,4 @@ $ bash <(curl -fsSL https://git.io/v15KU)
  $ php /var/www/seat/artisan seat:admin:email
 ```
 
-Some of you may be more visual learner than reading learner, therefore, you better should see this quick how-to movie into which you'll setup a fresh new SeAT instance in less than 10 minutes
-http://somup.com/cbjUQ0V2cF
+A community provided installation video is available at the following link, visually showing the installation process: https://screencast-o-matic.com/watch/cbjUQbIcl4
