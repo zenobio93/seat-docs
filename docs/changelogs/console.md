@@ -130,7 +130,7 @@ ebbebf2  2016-07-27 Leon Jacobs Default to 6 hours to reap jobs
 5b6c15c  2016-08-26 Leon Jacobs Escape any special characters a password.
 ffc04bf  2016-08-25 Leon Jacobs Code style and language fixes
 bf32149  2016-08-25 Leon Jacobs Merge pull request #1 from warlof/master
-5c7f85b  2016-08-23 elfaus  (origin/pr/1) add a control for SDE version in order to avoid downloading it again allow the user to force an SDE re-installation using --force argument
+5c7f85b  2016-08-23 elfaus  add a control for SDE version in order to avoid downloading it again allow the user to force an SDE re-installation using --force argument
 ```
 ### 2.0.0-alpha1
 ```
@@ -175,7 +175,7 @@ aa138a7  2017-01-02 Leon Jacobs Add StyleCI Configuration
 ```
 ### 2.0.4
 ```
-8d09f93  2017-01-26 Leon Jacobs (HEAD -> master, tag: 2.0.4, origin/master, origin/HEAD) Version Bump
+8d09f93  2017-01-26 Leon Jacobs (HEAD -> 2.x, tag: 2.0.4, origin/master, origin/HEAD, origin/2.x, master) Version Bump
 d4d1160  2017-01-25 mrurb   Fixed UpdateSde not using port (#3)
 a9a25d9  2017-01-20 Leon Jacobs Add codeclimate configuration
 ```

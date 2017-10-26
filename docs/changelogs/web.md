@@ -128,7 +128,7 @@ bc8e6eb  2015-12-04 Leon Jacobs (tag: 1.0.3) Start something for a dashboard
 0238e32  2015-12-04 Leon Jacobs Update README.md
 73d415d  2015-12-04 Leon Jacobs Add optional Google Two-Factor TOTP support.
 84723ff  2015-12-03 Leon Jacobs Merge pull request #3 from Cynabal/patch-1
-2d98ead  2015-12-03 Cynabal (origin/pr/3) Update add.blade.php
+2d98ead  2015-12-03 Cynabal Update add.blade.php
 ```
 ### 1.0.4
 ```
@@ -175,13 +175,13 @@ b65aa7e  2015-12-17 Leon Jacobs Remove URI scheme
 ```
 9e4cd79  2015-12-17 Leon Jacobs (tag: 1.0.9) Add account info check and Version Bump
 bfaabe2  2015-12-17 Leon Jacobs Merge pull request #4 from freedenizen/master
-d802b98  2015-12-17 Asher Schaffer (origin/pr/4) add updated_at timestamps to Character and Corporation Sheet summary
+d802b98  2015-12-17 Asher Schaffer add updated_at timestamps to Character and Corporation Sheet summary
 ```
 ### 1.0.10
 ```
 5aebf1e  2015-12-18 Leon Jacobs (tag: 1.0.10) Allow French to be chosen and Version Bump
 dae1719  2015-12-18 Leon Jacobs Merge pull request #5 from warlof/french
-6e827ae  2015-12-17 elfaus  (origin/pr/5) Translate SeAT in french according to 1.0.9
+6e827ae  2015-12-17 elfaus  Translate SeAT in french according to 1.0.9
 ```
 ### 1.0.11
 ```
@@ -195,16 +195,16 @@ eda1260  2015-12-19 Leon Jacobs Add ability to view character bookmarks
 7bdbf10  2015-12-24 Leon Jacobs (tag: 1.0.12) Version Bump
 6c365ad  2015-12-24 Leon Jacobs Specify versions with ~
 3f604e2  2015-12-24 Leon Jacobs Merge pull request #11 from warlof/french
-c1f4657  2015-12-24 elfaus  (origin/pr/11) add new translations according to recent commits (for 1.0.12)
+c1f4657  2015-12-24 elfaus  add new translations according to recent commits (for 1.0.12)
 ed485b3  2015-12-24 Leon Jacobs Move strontium usage to its own string for easier translation
 64a6f86  2015-12-24 Leon Jacobs Take into account bonusses silo/coupling array capacities
 488fd3b  2015-12-24 Leon Jacobs Merge pull request #8 from warlof/unknown-item
 cd66a8a  2015-12-24 Leon Jacobs Add Starbase details views
-f9dc521  2015-12-24 elfaus  (origin/pr/8) fix issue #9
+f9dc521  2015-12-24 elfaus  fix issue #9
 9f74d1c  2015-12-24 Leon Jacobs Add more details about starbases
 7e67371  2015-12-23 Leon Jacobs First pass at adding starbase views
 9496188  2015-12-21 Leon Jacobs Merge pull request #6 from warlof/french
-2491e69  2015-12-21 elfaus  (origin/pr/6) Translate SeAT in french according to 1.0.11
+2491e69  2015-12-21 elfaus  Translate SeAT in french according to 1.0.11
 f5fa4e3  2015-12-21 Leon Jacobs Show timestampts and paginate wallet info
 c6b4311  2015-12-21 Leon Jacobs Fix eveseat/seat#15
 ```
@@ -220,7 +220,7 @@ d412b7e  2015-12-26 Leon Jacobs Excluse Towers themselves from module views
 98a8e19  2015-12-26 Leon Jacobs Use a macro for progressbar generation
 c0e9ce3  2015-12-26 Leon Jacobs Remove unused variables
 22932b4  2015-12-26 Leon Jacobs Refactor Starbase views mostly for performance reasons
-0cefaac  2015-12-25 elfaus  (origin/pr/13) fix issue #5 about labels display on neutral and negative standing
+0cefaac  2015-12-25 elfaus  fix issue #5 about labels display on neutral and negative standing
 ```
 ### 1.0.15
 ```
@@ -259,8 +259,8 @@ afb0be5  2016-01-26 Leon Jacobs Add a People Groups feature
 530c268  2016-01-07 Leon Jacobs Add a check for loaded modules and php version
 c84baaa  2016-01-07 Leon Jacobs Merge pull request #18 from warlof/ticket38
 e4e1fd0  2016-01-07 Leon Jacobs Merge pull request #20 from warlof/ticket43
-94e470d  2016-01-05 elfaus  (origin/pr/18) Fix wishlist #38 eveseat/seat#38
-21a3bb3  2016-01-06 elfaus  (origin/pr/20) Fix issue eveseat/seat issues#43 - Update calc formula - Adding ceil in order to get round item unit (ccp like)
+94e470d  2016-01-05 elfaus  Fix wishlist #38 eveseat/seat#38
+21a3bb3  2016-01-06 elfaus  Fix issue eveseat/seat issues#43 - Update calc formula - Adding ceil in order to get round item unit (ccp like)
 274409b  2016-01-06 Leon Jacobs Use league/csv to parse CSV's instead of the homebrew
 741755d  2016-01-06 Leon Jacobs Remove unnecessary re-fetch of model data
 b7ff1a2  2016-01-06 Leon Jacobs Fix eveseat/seat#39 by changing ownership of an existing key.
@@ -268,15 +268,15 @@ b7ff1a2  2016-01-06 Leon Jacobs Fix eveseat/seat#39 by changing ownership of an 
 b357826  2016-01-06 Leon Jacobs Code formatting fixes
 d5f58de  2016-01-06 Leon Jacobs Merge pull request #19 from Cynabal/master
 7a78e2f  2016-01-06 Leon Jacobs Merge pull request #17 from warlof/french
-9d2ab0f  2016-01-05 Cynabal (origin/pr/19) Update seat.php
-86da25f  2016-01-05 elfaus  (origin/pr/17) New translation according to v1.0.18
+9d2ab0f  2016-01-05 Cynabal Update seat.php
+86da25f  2016-01-05 elfaus  New translation according to v1.0.18
 ```
 ### 1.0.20
 ```
 e2056a1  2016-01-26 Leon Jacobs (tag: 1.0.20) Version Bump
 92986b7  2016-01-26 Leon Jacobs Remove pcntl requirement
 ad5f515  2016-01-26 Leon Jacobs Merge pull request #21 from warlof/french
-642a832  2016-01-26 elfaus  (origin/pr/21) New french translation according to 1.0.19
+642a832  2016-01-26 elfaus  New french translation according to 1.0.19
 ```
 ### 1.0.21
 ```
@@ -653,6 +653,12 @@ d1b1527  2017-08-12 Loïc LEUILLIOT improve tables usability by adding paginate 
 ```
 ### 2.0.17
 ```
-0450d6c  2017-08-12 Leon Jacobs (HEAD -> master, tag: 2.0.17, origin/master, origin/HEAD) Version bump
+0450d6c  2017-08-12 Leon Jacobs (tag: 2.0.17) Version bump
 ac49aa9  2017-08-12 Loïc LEUILLIOT fix merge issue due to conflicting dom property between indie filter PR and paginate duplication PR (#86)
+```
+### 2.0.18
+```
+036bce9  2017-09-17 Leon Jacobs (tag: 2.0.18) Version bump
+4ab49a2  2017-09-17 Loïc LEUILLIOT fix hasrole method by calling magic property instead method. (#90)
+6183416  2017-09-16 Loïc LEUILLIOT add documentation link to supervisor integration (#89)
 ```

@@ -95,12 +95,12 @@ cfb4fdc  2016-12-15 Leon Jacobs (tag: 2.0.4) Version Bump
 5e66f49  2016-12-15 Leon Jacobs Throttle notifications to prevent HTTP 429's.
 cf8541b  2016-12-15 Leon Jacobs Small refactor of siphon detection `getData` method to use collections.
 72f7d13  2016-12-15 Leon Jacobs Merge pull request #3 from karbowiak/master
-595db6c  2016-12-14 Michael Karbowiak (origin/pr/3) Remove sleep again.. replace with token bucket or something similar at a later point
+595db6c  2016-12-14 Michael Karbowiak Remove sleep again.. replace with token bucket or something similar at a later point
 af2d7c1  2016-12-14 Michael Karbowiak Fix chmod
 effc7a8  2016-12-14 Michael Karbowiak Add Siphon Alerts
 c9038d6  2016-12-14 Michael Karbowiak Add sleep(1) to the slack notifications, to make it sleep for a full second before sending out each message.. To stop Slack/Discord from 429'ing..
 69bdf77  2016-12-14 Leon Jacobs Merge pull request #1 from warlof/typo
-f0157c7  2016-12-14 elfaus  (origin/pr/1) fix typo on notification message
+f0157c7  2016-12-14 elfaus  fix typo on notification message
 ```
 ### 2.0.5
 ```
@@ -141,7 +141,7 @@ ce58c03  2017-05-07 Loïc LEUILLIOT Starbase Siphon alert hotfix (#6)
 ```
 ### 2.0.11
 ```
-e760f9d  2017-08-12 Leon Jacobs (HEAD -> master, tag: 2.0.11, origin/master, origin/HEAD) Version bump
+e760f9d  2017-08-12 Leon Jacobs (HEAD -> 2.x, tag: 2.0.11, origin/master, origin/HEAD, origin/2.x, master) Version bump
 49d515e  2017-08-12 Leon Jacobs Update wording.
 cbfac3e  2017-08-12 Leon Jacobs Remove debug line.
 ```

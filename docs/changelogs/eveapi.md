@@ -413,7 +413,7 @@ c80e611  2017-04-17 Loïc LEUILLIOT fix an issue which allow an empty response t
 ```
 ### 2.0.13
 ```
-e763e48  2017-08-12 Leon Jacobs (HEAD -> master, tag: 2.0.13, origin/master, origin/HEAD) Version Bump
+e763e48  2017-08-12 Leon Jacobs (tag: 2.0.13, master) Version Bump
 8d0eced  2017-08-12 Leon Jacobs Style fixes.
 9e36c80  2017-08-12 Loïc LEUILLIOT add industry jobs history to industry job and fix CCP shit on job status (#21)
 465e6cf  2017-08-12 Loïc LEUILLIOT optimise dashboard query for top mail badge by adding an index on sentDate (#20)

@@ -354,7 +354,7 @@ eb02e76  2017-07-02 Loïc LEUILLIOT avoid null exception on assetlist_locations 
 ```
 ### 2.0.11
 ```
-4658230  2017-08-12 Leon Jacobs (HEAD -> master, tag: 2.0.11, origin/master, origin/HEAD) Version Bump
+4658230  2017-08-12 Leon Jacobs (tag: 2.0.11, origin/master, origin/HEAD, master) Version Bump
 d1bc5b3  2017-08-12 Leon Jacobs Remove an unused variable and style fixes.
 654e4da  2017-08-12 Loïc LEUILLIOT add ACL filters on dashboard stats (#25)
 a65f4a4  2017-08-12 Leon Jacobs Style fixes

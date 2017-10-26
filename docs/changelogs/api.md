@@ -86,7 +86,7 @@ fbf3e88  2016-07-10 Leon Jacobs (tag: 1.0.12) Version Bump
 e8f1882  2016-07-10 Leon Jacobs Fix eveseat/seat#115 by adding new endpoints for role management
 729971f  2016-07-10 Leon Jacobs Convert from a resource to controller route for roles
 d2ff1df  2016-06-28 Leon Jacobs Merge pull request #1 from nizzan/patch-1
-dc80447  2016-06-28 nizzan  (origin/pr/1) Typo on API Token generation
+dc80447  2016-06-28 nizzan  Typo on API Token generation
 ```
 ### 1.0.13
 ```
@@ -171,7 +171,7 @@ f345da5  2017-04-17 Leon Jacobs Small cleanup
 ```
 ### 2.0.9
 ```
-36c8592  2017-08-12 Leon Jacobs (HEAD -> master, tag: 2.0.9, origin/master, origin/HEAD) Version Bump
+36c8592  2017-08-12 Leon Jacobs (tag: 2.0.9) Version Bump
 8c6e4e3  2017-08-12 Leon Jacobs Style fixes.
 91c33bf  2017-08-12 Loïc LEUILLIOT Update role (#8)
 38d0fc8  2017-08-12 Loïc LEUILLIOT fix api log issue (#10)
