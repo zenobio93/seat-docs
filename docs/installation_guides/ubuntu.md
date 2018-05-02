@@ -168,7 +168,7 @@ Since SeAT is a PHP application, we will to install php packages.
 For now, we're relying on PHP 7.1 due to issues with Laravel on PHP 7.2 on some methods.
 We will add ondrej PPA which is very popular and caters for most php versions.
 
-Let's start by using your favorite editor and create the file `/etc/apt/source.list.d/php.list` (`nano` or `vi` works well for such things).
+Let's start by using an editor to create the file `/etc/apt/source.list.d/php.list` (`nano` or `vi` works well for such things).
 Inside the newly created file, simply paste the block bellow :
 
 <ul class="nav nav-tabs">
@@ -349,7 +349,7 @@ Since SeAT 3.0, an admin user is a real dedicated user and you will no longer be
 To login as an administrator, simply run the following command :
 `sudo -H -u seat bash -c 'php artisan seat:admin:login'`
 
-You'll get a link after the command has finished running which looks similar to tthe one bellow :
+You'll get a link after the command has finished running which looks similar to the one bellow :
 `http://yourserver/auth/login/admin/somerandomstring`
 
 Copy it and paste it inside your browser and you will be authenticated as the admin user.
