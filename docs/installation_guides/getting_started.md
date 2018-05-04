@@ -31,7 +31,7 @@ Since SeAT v2.0, a `seat` tool has been made available to help with installation
 
 To download the `seat` tool, run the following commands:
 ```
-curl -fsSL https://git.io/vXb0u -o /usr/local/bin/seat
+curl -fsSL https://git.io/seat-tool -o /usr/local/bin/seat
 chmod +x /usr/local/bin/seat
 hash -r
 ```
