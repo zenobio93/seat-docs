@@ -5,7 +5,7 @@ A small amount of Linux experience is preferred when it comes to this guide, all
 This guide assumes you want all of the available SeAT components installed (which is the default).
 
 ### getting started
-We are going to assume you have root access to a fresh Ubuntu Server. Typically access is gained via SSH.
+We are going to assume you have root access to a fresh Debian Server. Typically access is gained via SSH.
 All of the below commands are to be entered in the SSH terminal session for the installation & configuration of SeAT.
 If the server you want to install SeAT on is being used for other things too (such as hosting MySQL databases and or websites), then please keep that in mind while following this guide.
 
@@ -24,10 +24,9 @@ Packages are installed using the `aptitude` package manager as the `root` user.
  10. [Admin Login](#admin-login)
 
 ### Eve Application
-SeAT 3.0 consumes ESI in order to retrieve information. Before you can make any authenticated calls to ESI, you have to create an `eve application`. To do so, browse to https://developers.eveonline.com and login using the button on top right corner.
-Once done, on the top menu, click on `applications` then create a new one with `create new application` button.
+SeAT 3.0 consumes ESI in order to retrieve information. Before you can make any authenticated calls to ESI, you have to create an `eve application`. To do so, browse to https://developers.eveonline.com and login using the button on top right corner. On the top menu, click on `applications` then create a new one with `create new application` button.
 
-Fill the initial form with whatever you want (`name` and `description`) but keep in mind that this information will be showed to the user while they sign in as well as when they review third party applications that have access to their account information.
+Fill the initial form with whatever you want (`name` and `description`) but keep in mind that this information will be shown to the user while they sign in as well as when they review third party applications that have access to their account information.
 
  - In the `Connection Type` section, check `Authentication & API Access` and add scopes from which you want information. (you need only those starting by `esi`).
  - In the `Callback URL` section, put `https://yourserver/auth/eve/callback` where `yourserver` is either a domain or an IP pointing to the server where SeAT will be installed.
@@ -36,7 +35,7 @@ Fill the initial form with whatever you want (`name` and `description`) but keep
 Take note of the `Client ID`, `Secret Key`, `Callback URL` fields which will be required at a later stage in this documentation.
 
 ### Basics
-We will ensuring that your system is up to date before starting with package installation. So, let's start with basics :
+We will ensure that your system is up to date before starting with package installations. So, let's start with some basics :
 
 - `apt-get update` to refresh the repositories cache.
 - `apt-get full-upgrade` to update any installed packages.
@@ -204,7 +203,7 @@ Since SeAT is a PHP application, we will to install php packages.
 For now, we're relying on PHP 7.1 due to issues with Laravel on PHP 7.2 on some methods.
 We will add ondrej DPA which is very popular and caters for most php versions.
 
-Let's start by using an editor to create the file `/etc/apt/source.list.d/php.list` (`nano` or `vi` works well for such things).
+Let's start by using an editor to create the file `/etc/apt/source.list.d/php.list`.
 Inside the newly created file, simply paste the block bellow :
 
 <ul class="nav nav-tabs">
@@ -242,7 +241,7 @@ Update our repository cache
 apt-get update
 ```
 
-And finally, install php packages with SeAT dependencies
+And finally, install PHP packages needed as SeAT dependencies
 
 ```
 apt-get install curl zip php7.1-cli php7.1-mysql php7.1-mcrypt php7.1-intl php7.1-curl php7.1-gd php7.1-mbstring php7.1-bz2 php7.1-dom php7.1-zip
@@ -257,7 +256,7 @@ apt-get install redis-server
 ```
 
 ### SeAT Download
-Here we go, all requirements are now met. We will start installing SeAT.
+Here we go, all requirements are now met. We will start installing SeAT itself.
 Start with `git` and `composer` which will handle our php package dependencies and download SeAT from our repositories.
 
 ```
@@ -267,7 +266,7 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 
 Create the www directory using `mkdir /var/www`, then move into it with `cd /var/www` and download SeAT using `composer create-project eveseat/seat --no-dev --stability=beta`.
 
-Next, we will add a dedicated user for security reasons and in order to distinguish SeAT processes easier.
+Next, we will add a dedicated user for security reasons and in to help us distinguish SeAT processes easier.
 
 ```
 adduser --group --no-create-home --system --disabled-login seat
@@ -284,29 +283,29 @@ chmod -R guo+w /var/www/seat/storage
 
 Next, we will edit SeAT main configuration file `.env`. This file will be located at `/var/www/seat/.env`
 
-Update it with the information you got earlier in the installation process. Refer to the table bellow in order to get each parameter description.
+Update it with the information you got earlier in the installation process. Refer to the table bellow in order to get a description of each parameter.
 
 | Parameter Name | Default value | Description |
 |-------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| APP_URL | http://seat.local | This is the public address where SeAT instance is reachable. That should match with the `EVE_CALLBACK_URL` without `/auth/eve/callback` suffix |
-| DB_HOST | 127.0.0.1 | This is the IP or domain from your SQL Server. |
-| DB_PORT | 3306 | This is the port used by your SQL Server to receive query. |
-| DB_DATABASE | seat | This is the name for your SeAT database. |
-| DB_USERNAME | seat | This is the user which is granted to the SeAT database from SeAT server. |
+| APP_URL | http://seat.local | This is the public address where your SeAT instance will be reachable. It should match with the `EVE_CALLBACK_URL` without `/auth/eve/callback` suffix |
+| DB_HOST | 127.0.0.1 | This is the IP or domain of your SQL Server. |
+| DB_PORT | 3306 | This is the port used by your SQL Server to connect to. |
+| DB_DATABASE | seat | This is the name of your SeAT database. |
+| DB_USERNAME | seat | This is the user which is granted acces to the SeAT database. |
 | DB_PASSWORD | secret | This is the user password |
 | MAIL_DRIVER | smtp | This is the driver used to send mail. It will be covered in a dedicated article. |
 | MAIL_HOST | smtp.mailtrap.io | This is driver mail hostname. It will be covered in a dedicated article. |
 | MAIL_PORT | 2525 | This is the driver mail port. It will be covered in a dedicated article. |
 | MAIL_USERNAME | null | This is the driver mail username. It will be covered in a dedicated article. |
 | MAIL_PASSWORD | null | This is the driver mail password. It will be covered in a dedicated article. |
-| MAIL_ENCRYPTION | null | This is the driver mail encryption. It will be covered in a dedicated article. |
-| MAIL_FROM_ADDRESS | noreply@localhost.local | This is the mail address which the user will chown when he will receive mail from SeAT. |
-| MAIL_FROM_NAME | SeAT Administrator | This is the name which the user will chown when he will receive mail from SeAT. |
-| EVE_CLIENT_ID | null | This is the EVE Application Client ID you'll get when you created an application over https://developers.eveonline.com |
-| EVE_CLIENT_SECRET | null | This is the EVE Application Client Secret you'll get when you created an application over https://developers.eveonline.com |
-| EVE_CALLBACK_URL | https://seat.local/auth/eve/callback | This is the EVE Application Callback URL you filled when you created an application over https://developers.eveonline.com. You should have only to fix `seat.local` |
+| MAIL_ENCRYPTION | null | This is mail encryption configuration. It will be covered in a dedicated article. |
+| MAIL_FROM_ADDRESS | noreply@localhost.local | This is the FROM mail address SeAT will use when sending mail. |
+| MAIL_FROM_NAME | SeAT Administrator | This is the name SeAT will use when sending mail. |
+| EVE_CLIENT_ID | null | This is the EVE Application Client ID you'll get when you create an application at https://developers.eveonline.com |
+| EVE_CLIENT_SECRET | null | This is the EVE Application Client Secret you'll get when you create an application at https://developers.eveonline.com |
+| EVE_CALLBACK_URL | https://seat.local/auth/eve/callback | This is the EVE Application Callback URL you filled when you created an application at https://developers.eveonline.com. You should have only to update the `seat.local` component. |
 
-Now, we will publish assets and seed the SeAT database. Let's do this with the following commands :
+Next, we will publish assets and seed the SeAT database. Let's do this with the following commands :
  - `sudo -H -u seat bash -c 'php /var/www/seat/artisan vendor:publish --force --all'` this will publish all package assets, including horizon
  - `sudo -H -u seat bash -c 'php /var/www/seat/artisan migrate'` it will generate SeAT database structure
  - `sudo -H -u seat bash -c 'php /var/www/seat/artisan db:seed --class=Seat\\Services\\database\\seeds\\ScheduleSeeder'` this will seed the scheduling table used for jobs
@@ -320,7 +319,7 @@ apt-get install supervisor
 ```
 
 Next, we will create a dedicated configuration file which will ask supervisor to keep an eye on Horizon.
-Let's start by using an editor to create the file `/etc/supervisor/conf.d/seat.conf` (`nano` or `vi` works well for such things).
+Let's start by using an editor to create the file `/etc/supervisor/conf.d/seat.conf`.
 
 Inside the newly created file, add the following configuration items:
 
@@ -358,13 +357,13 @@ And seed the tab with the following :
 ### Web Service
 The SeAT web interface requires a web server to serve the HTML goodies it has. We highly encourage you to use nginx and will be covered in this document. You don't **have** to use it, so if you prefer something else, feel free.
 
-Let's install nginx :
+Let's install nginx:
 
 ```
 apt-get install nginx php7.1-fpm
 ```
 
-Duplicate the standard www pool configuration file from PHP-Fpm to a dedicated SeAT pool :
+Duplicate the standard www pool configuration file from PHP-Fpm to a dedicated SeAT pool:
 
 ```
 cp /etc/php/7.1/fpm/pool.d/www.conf /etc/php/7.1/fpm/pool.d/seat.conf
@@ -381,7 +380,7 @@ Next, update the newly created pool file at `/etc/php/7.1/fpm/pool.d/seat.conf` 
 
 Once done, you can create a new configuration file into nginx to server SeAT called `/etc/nginx/site-availables/seat` 
 
-And put the content bellow inside
+And put the content bellow inside:
 
 ```
 server {
