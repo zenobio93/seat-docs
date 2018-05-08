@@ -1,6 +1,16 @@
-site_name: SeAT Documentation
-site_description: SeAT Documentation
-repo_url: https://github.com/eveseat/docs
+# Information
+site_name: 'SeAT Documentation'
+site_description: 'Simple EVE Api Tool Documentation'
+site_url: 'https://github.com/eveseat/docs'
+
+# Repository
+repo_name: 'eveseat/docs'
+repo_url: 'https://github.com/eveseat/docs'
+
+# Copyright
+copyright: 'Copyright &copy; 2015 - 2018 Leon Jacobs'
+
+# Documentation TOC
 pages:
     - Home: index.md
     - General:
@@ -53,10 +63,24 @@ pages:
         - Notifications: changelogs/notifications.md
         - Services: changelogs/services.md
         - Web: changelogs/web.md
-theme: mkdocs
-dev_addr: 0.0.0.0:9010
-extra_css: [css/extra.css]
+
+# Theme Configuration
+theme:
+    name: 'material'
+    palette:
+        primary: 'grey'
+
+# MKDocs Configuration
+dev_addr: 0.0.0.0:8000
+
+# Customization
 markdown_extensions:
     - admonition
+    - codehilite
     - toc:
-        permalink: 
+        permalink: true
+# Customization
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/eveseat/seat'
