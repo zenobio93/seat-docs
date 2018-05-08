@@ -64,7 +64,7 @@ Login as an admin user into SeAT, browse to **Configuration** -> **SeAT Settings
 
 Logout, and you should see the **LOGIN with EVE Online** button.
 
-![new sso application](http://i.imgur.com/umOPiDV.png)
+![new sso application](https://i.imgur.com/umOPiDV.png)
 
 ## Troubleshooting
 In case something goes wrong, you have a few debugging options.
