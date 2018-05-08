@@ -70,9 +70,6 @@ theme:
     palette:
         primary: 'grey'
 
-# MKDocs Configuration
-dev_addr: 0.0.0.0:8000
-
 # Customization
 markdown_extensions:
     - admonition

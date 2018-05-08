@@ -5,4 +5,5 @@ RUN pip install mkdocs mkdocs-material && \
 
 WORKDIR /docs
 
-CMD mkdocs serve
+ENTRYPOINT ["mkdocs"]
+CMD ["serve", "--dev-addr=0.0.0.0:8000"]
