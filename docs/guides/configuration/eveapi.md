@@ -1,4 +1,4 @@
-![SeAT](http://i.imgur.com/aPPOxSK.png)
+![SeAT](https://i.imgur.com/aPPOxSK.png)
 
 **Package**: eveseat/eveapi  
 **Config**: [here](https://github.com/eveseat/eveapi/tree/master/src/Config)

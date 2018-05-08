@@ -1,4 +1,4 @@
-![SeAT](http://i.imgur.com/aPPOxSK.png)
+![SeAT](https://i.imgur.com/aPPOxSK.png)
 
 SeAT sources information about the SDE from a json file hosted [here](https://github.com/eveseat/resources/blob/master/sde.json). It may happen that the SDE gets updated but the the json resource has not yet been updated. For this reason, its possible to specify the version to get based on what is available on [https://www.fuzzwork.co.uk/dump/](https://www.fuzzwork.co.uk/dump/).
 

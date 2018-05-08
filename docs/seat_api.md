@@ -1,4 +1,4 @@
-![SeAT](http://i.imgur.com/aPPOxSK.png)
+![SeAT](https://i.imgur.com/aPPOxSK.png)
 ## Introduction
 SeAT has a RESTful API. Endpoints are protected by a access token that is limited by IP address.
 For every IP address that wants to make API requests to SeAT, a unique token is required.  

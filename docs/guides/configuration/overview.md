@@ -1,4 +1,4 @@
-![SeAT](http://i.imgur.com/aPPOxSK.png)
+![SeAT](https://i.imgur.com/aPPOxSK.png)
 
 This page aims to give a brief overview of how configuration is handled in SeAT and its packages.
 To give some perspective, we have to have a quick look at how packages are built and bootstrapped.
