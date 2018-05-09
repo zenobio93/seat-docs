@@ -28,7 +28,7 @@ Once downloaded, `docker-compose up -d` is run from that folder to start the SeA
 
 <script src="https://asciinema.org/a/c0EM0kQnj86JkNX40TBdhA4Ua.js" id="asciicast-c0EM0kQnj86JkNX40TBdhA4Ua" async></script>
 
-Once the docker installation is complete, you should have SeAT available on the server, listening on port 8080. For more detailed docker related information, please refer to the [Docker](/guides/installation/docker/) section.
+Once the docker installation is complete, you should have SeAT available on the server, listening on port 8080. For more detailed docker related information including configuring a web server with SSL support, please refer to the [Docker](/guides/installation/docker/) section.
 
 ## Installer (SeAT Tool)
 
