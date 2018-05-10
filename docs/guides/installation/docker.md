@@ -14,15 +14,9 @@ In terms of performance, the same hardware requirements apply to docker installa
 
 !!! warning
 
-    In case you plan to purchase a virtualised server (also call VPS), ensure the provider is working with **KVM** and **not**
-    **OpenVZ**. This is related to virtualization technology.
-    
-    On **OpenVZ** environment, you're using the server host kernel
-    and not able to update it yourself. Most of the time, those kernel are outdated and this will prevent you to install Docker.
-    Furthermore, that can lead to security issue like recent [Meltdown and Spectre fail](https://meltdownattack.com/).
-    
-    With **KVM** technology, you have hand on your VPS kernel without depending on the host one and are able to update it
-    if needed.
+    When considering a VPS provider, make sure you choose one that does not make use of OpenVZ or similar operating-system level virtualization technologies. These virtualization technologies limit you in terms of kernel access as they purely containerize an existing Linux installation. 
+
+    For a successful docker installation, choose a provider that uses para-virtualized technologies such as KVM, VMWare or XEN allowing you full control to the instance (and therefor the kernel itself). Examples of such providers are [Digital Ocean](https://www.digitalocean.com/), [Linode](https://www.linode.com/) and [Vultr](https://www.vultr.com/).
 
 ## Internal Container Setup Overview
 
