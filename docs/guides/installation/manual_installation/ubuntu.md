@@ -3,50 +3,47 @@
 # Ubuntu
 
 This guide attempts to explain how to manually install SeAT onto an **Ubuntu** Server.
-A small amount of Linux experience is preferred when it comes to this guide, all though it is not entirely mandatory.
-This guide assumes you want all of the available SeAT components installed (which is the default).
+A small amount of Linux experience is preferred when it comes to this guide, all though it is not entirely mandatory. This guide assumes you want all of the available SeAT components installed (which is the default).
 
-### Getting started
-We are going to assume you have root access to a fresh Ubuntu Server. Typically access is gained via SSH.
-All of the below commands are to be entered in the SSH terminal session for the installation & configuration of SeAT.
-If the server you want to install SeAT on is being used for other things too (such as hosting MySQL databases and or websites), then please keep that in mind while following this guide.
+## Getting started
+
+We are going to assume you have root access to a fresh Ubuntu Server. Typically access is gained via SSH. All of the below commands are to be entered in the SSH terminal session for the installation & configuration of SeAT. If the server you want to install SeAT on is being used for other things too (such as hosting MySQL databases and or websites), then please keep that in mind while following this guide.
 
 Packages are installed using the `aptitude` package manager as the `root` user.
 
 ### Eve Application
-SeAT 3.0 consumes ESI in order to retrieve information. Before you can make any authenticated calls to ESI, you have to create an `eve application`. To do so, browse to https://developers.eveonline.com and login using the button on top right corner.
-Once done, on the top menu, click on `applications` then create a new one with `create new application` button.
+
+SeAT 3.0 consumes ESI in order to retrieve information. Before you can make any authenticated calls to ESI, you have to create an `eve application`. To do so, browse to https://developers.eveonline.com and login using the button on top right corner. Once done, on the top menu, click on `applications` then create a new one with `create new application` button.
 
 Fill the initial form with whatever you want (`name` and `description`) but keep in mind that this information will be showed to the user while they sign in as well as when they review third party applications that have access to their account information.
 
- - In the `Connection Type` section, check `Authentication & API Access` and add scopes from which you want information. (you need only those starting by `esi`).
- - In the `Callback URL` section, put `https://yourserver/auth/eve/callback` where `yourserver` is either a domain or an IP pointing to the server where SeAT will be installed.
- - Finally, click on `Create application` button, back to `applications` and near the created application, hit the `view application` button.
+- In the `Connection Type` section, check `Authentication & API Access` and add scopes from which you want information. (you need only those starting by `esi`).
+- In the `Callback URL` section, put `https://yourserver/auth/eve/callback` where `yourserver` is either a domain or an IP pointing to the server where SeAT will be installed.
+- Finally, click on `Create application` button, back to `applications` and near the created application, hit the `view application` button.
 
 Take note of the `Client ID`, `Secret Key`, `Callback URL` fields which will be required at a later stage in this documentation.
 
-### Basics
+## Basics
+
 We will ensuring that your system is up to date before starting with package installation. So, let's start with basics :
 
- - `apt-get update` to refresh the repositories cache.
- - `apt-get full-upgrade` to update any installed packages.
- - `reboot` in order to ensure any updated software is the current running version.
- - `apt-get autoremove` (after the reboot) to cleanup any unneeded packages.
+- `apt-get update` to refresh the repositories cache.
+- `apt-get full-upgrade` to update any installed packages.
+- `reboot` in order to ensure any updated software is the current running version.
+- `apt-get autoremove` (after the reboot) to cleanup any unneeded packages.
 
 ### Database
-SeAT relies **heavily** on a database to function.
-Everything it learns is stored here, along with things such as user accounts for your users. It comes without saying that database security is a very important aspect too. So, ensure that you choose very strong passwords for your installation where required.
+
+SeAT relies **heavily** on a database to function. Everything it learns is stored here, along with things such as user accounts for your users. It comes without saying that database security is a very important aspect too. So, ensure that you choose very strong passwords for your installation where required.
 
 This document describes using MariaDB, but you can use MySQL as well. Just double check the requirements.
 
 `curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash` this script provided by MariaDB team will setup your repositories properly
 
 !!! warning
-    
+
     At the time when this document was written, MariaDB as not available on Ubuntu 18.04 Bionic.
-    The package version available in main repository does not meet minimum requirement as SeAT 3.0 requires at least
-    version 10.2.7 or higher whereas official repository only provides 10.1.29. In order to install SeAT,
-    use MySQL instead.
+    The package version available in main repository does not meet minimum requirement as SeAT 3.0 requires at least version 10.2.7 or higher whereas official repository only provides 10.1.29. In order to install SeAT, use MySQL instead.
 
 Lets install the database server:
 
@@ -58,8 +55,7 @@ Next, we are going to secure the database server by removing anonymous access an
 
 !!! note
 
-    The database `root` password should not be confused with the operating systems `root` passwords.
-    They are both completely different. They should also not be the same password.
+    The database `root` password should not be confused with the operating systems `root` passwords. They are both completely different. They should also not be the same password.
 
 To secure the database, run:
 
@@ -106,10 +102,7 @@ Reload privilege tables now? [Y/n] y
 [...]
 ```
 
-That concludes the installation of the database server and securing it.
-Next, we need to create an actual database for SeAT to use on the server.
-For that we need to use the MySQL command line client and enter a few commands to create the database and the user that will be accessing it.
-Let get to it.
+That concludes the installation of the database server and securing it. Next, we need to create an actual database for SeAT to use on the server. For that we need to use the MySQL command line client and enter a few commands to create the database and the user that will be accessing it. Let get to it.
 
 Fire up the MySQL client by running:
 
@@ -117,9 +110,7 @@ Fire up the MySQL client by running:
 mysql -uroot -p
 ```
 
-This will prompt you for a password.
-Use the password you configured for the `root` account when we ran `mysql_secure_installation`.
-This will most probably be the last time you need to use this password :)
+This will prompt you for a password. Use the password you configured for the `root` account when we ran `mysql_secure_installation`. This will most probably be the last time you need to use this password :)
 
 If the password was correct, you should see a prompt similar to the one below:
 
@@ -167,9 +158,8 @@ FLUSH PRIVILEGES;
     Remember the password for the `seat` database user as we will need it later to configure SeAT.
 
 ### PHP
-Since SeAT is a PHP application, we will to install php packages.
-For now, we're relying on PHP 7.1 due to issues with Laravel on PHP 7.2 on some methods.
-We will add ondrej PPA which is very popular and caters for most php versions.
+
+Since SeAT is a PHP application, we will to install php packages. For now, we're relying on PHP 7.1 due to issues with Laravel on PHP 7.2 on some methods. We will add ondrej PPA which is very popular and caters for most php versions.
 
 Let's start by using an editor to create the file `/etc/apt/source.list.d/php.list` (`nano` or `vi` works well for such things).
 Inside the newly created file, simply paste the block bellow :
@@ -215,16 +205,16 @@ apt-get install curl zip php7.1-cli php7.1-mysql php7.1-mcrypt php7.1-intl php7.
 ```
 
 ### Redis
-SeAT makes use of [Redis](http://redis.io/) as a cache and message broker for the Queue backend.
-Installing it is really easy. Do it with:
+
+SeAT makes use of [Redis](http://redis.io/) as a cache and message broker for the Queue back end. Installing it is really easy. Do it with:
 
 ```bash
 apt-get install redis-server
 ```
 
 ### SeAT Download
-Here we go, all requirements are now met. We will start installing SeAT.
-Start with `git` and `composer` which will handle our php package dependencies and download SeAT from our repositories.
+
+Here we go, all requirements are now met. We will start installing SeAT. Start with `git` and `composer` which will handle our php package dependencies and download SeAT from our repositories.
 
 ```bash
 apt-get install git
@@ -280,14 +270,14 @@ Now, we will publish assets and seed the SeAT database. Let's do this with the f
 - `sudo -H -u seat bash -c 'php /var/www/seat/artisan eve:update:sde'` it will download latest SDE data
 
 ### Supervisor
+
 SeAT relies on supervisor in order to keep the Horizon process up. Horizon is the new queue backend in SeAT 3.0.
 
 ```bash
 apt-get install supervisor
 ```
 
-Next, we will create a dedicated configuration file which will ask supervisor to keep an eye on Horizon.
-Use your favorite editor in order to spawn the file at the following path `/etc/supervisor/conf.d/seat.conf`
+Next, we will create a dedicated configuration file which will ask supervisor to keep an eye on Horizon. Use your favorite editor in order to spawn the file at the following path `/etc/supervisor/conf.d/seat.conf`
 
 Inside the newly created file, add the following configuration items:
 
@@ -325,9 +315,7 @@ And seed the tab with the following :
 ### Web Service
 The SeAT web interface requires a web server to serve the HTML goodies it has. We highly encourage you to use nginx and will be covered in this document. You don't **have** to use it, so if you prefer something else, feel free.
 
-The SeAT web interface requires a web server to serve the HTML goodies it has. We highly encourage you to use 
-[nginx](/guides/installation/basic_installation/nginx) or [traefik](/guides/installation/basic_installation/traefik)
-and these we will covered in the next few pages. You don't have to use it, so if you prefer something else, feel free.
+The SeAT web interface requires a web server to serve the HTML goodies it has. We highly encourage you to use [nginx](/guides/installation/basic_installation/nginx) or [traefik](/guides/installation/basic_installation/traefik) and these we will covered in the next few pages. You don't have to use it, so if you prefer something else, feel free.
 
 #### Nginx
 
@@ -352,7 +340,7 @@ Next, update the newly created pool file at `/etc/php/7.1/fpm/pool.d/seat.conf` 
 | group = www-data | group = seat |
 | listen = /run/php/php7.1-fpm.sock | listen = /run/php/seat.sock |
 
-Once done, you can create a new configuration file into nginx to server SeAT called `/etc/nginx/site-availables/seat` 
+Once done, you can create a new configuration file into nginx to server SeAT called `/etc/nginx/site-available/seat`
 
 And put the content bellow inside
 
@@ -454,7 +442,9 @@ and add these lines:
         AssignUserId seat seat
 </IfModule>
 ```
-your configuration file should look similar to this:
+
+Your configuration file should look similar to this:
+
 ```bash
 <VirtualHost *:80>
         ServerAdmin email@yourdomain.com
@@ -466,14 +456,14 @@ your configuration file should look similar to this:
                 AllowOverride All
                 Require all granted
         </Directory>
-        
+
         <IfModule mpm_itk_module>
                 AssignUserId seat seat
         </IfModule>
-        
+
         ErrorLog ${APACHE_LOG_DIR}/seat-error.log
         CustomLog ${APACHE_LOG_DIR}/seat-access.log combined
-        
+
 </VirtualHost>
 ```
 
@@ -485,6 +475,7 @@ sudo service apache2 reload
 ```
 
 ### Admin Login
+
 Since SeAT 3.0, an admin user is a real dedicated user and you will no longer be able to link characters or corporations to it. Using the admin user, you will probably and most typically just add your main character to the Superuser group and never login as an admin again.
 
 To login as an administrator, simply run the following command :
@@ -495,7 +486,7 @@ sudo -H -u seat bash -c 'php /var/www/seat/artisan seat:admin:login'
 
 You'll get a link after the command has finished running which looks similar to the one bellow :
 
-```
+```txt
 http://yourserver/auth/login/admin/somerandomstring
 ```
 
