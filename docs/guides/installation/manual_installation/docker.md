@@ -10,24 +10,13 @@ As mentioned in numerous other places, docker is ideally the installation route 
 
 ## Docker Requirements
 
-In terms of performance, the same hardware requirements apply to docker installations as those that choose otherwise. 
-For information about the hardware requirements for SeAT, please see [this](/general/hardware_requirements/) 
-page. The only major difference between docker and other installation options is that the containers themselves may take 
-up a few hundred MB's of extra space. In most cases this should be a non-issue.
+In terms of performance, the same hardware requirements apply to docker installations as others. For information about the hardware requirements for SeAT, please see [this](/general/hardware_requirements/) page. The only major difference between docker and other installation options is that the containers themselves may take up a few hundred MB's of extra space. In most cases this should be a non-issue.
 
 !!! warning
 
-    In case you plan to purchase a virtualised server (also call VPS), ensure the provider is working with **KVM** and **not**
-    **OpenVZ**. This is related to virtualization technology.
-    
-    On **OpenVZ** environment, you're using the server host kernel
-    and not able to update it yourself. Most of the time, those kernel are outdated and this will prevent you to install Docker.
-    Furthermore, that can lead to security issue like recent [Meltdown and Spectre fail](https://meltdownattack.com/).
-    
-    With **KVM** technology, you have hand on your VPS kernel without depending on the host one and are able to update it
-    if needed.
+    When considering a VPS provider, make sure you choose one that does not make use of OpenVZ or similar operating-system level virtualization technologies. These virtualization technologies limit you in terms of kernel access as they purely containerize an existing Linux installation.
 
-
+    For a successful docker installation, choose a provider that uses para-virtualized technologies such as KVM, VMWare or XEN allowing you full control to the instance (and therefor the kernel itself). Examples of such providers are [Digital Ocean](https://www.digitalocean.com/), [Linode](https://www.linode.com/) and [Vultr](https://www.vultr.com/).
 
 ## Internal Container Setup Overview
 
@@ -42,16 +31,16 @@ The previously mentioned compose file is really simple. A high level overview of
     - `mariadb-data`: This is the *most important* volume as it contains all of the database data. This is the one volume that you should configure a backup solution for!
 - Six services (or containers) are used within the SeAT docker stack. Two of the services are pulled directly from [Dockerhub](https://hub.docker.com/).
     Four others are custom build and also hosted on DockerHub. Those containers are exposed in the table bellow :
-    
-    | Image Name | Image Repository |
-    | ---------- | ---------------- 
-    | `mariadb:10.3` | [https://hub.docker.com/_/mariadb/](https://hub.docker.com/_/mariadb/) |
-    | `redis:3` | [https://hub.docker.com/_/redis/](https://hub.docker.com/_/redis/) |
-    | `eveseat/eveseat-nginx` | [https://hub.docker.com/r/eveseat/eveseat-nginx/](https://hub.docker.com/r/eveseat/eveseat-nginx/) |
-    | `eveseat/eveseat-app` | [https://hub.docker.com/r/eveseat/eveseat-app/](https://hub.docker.com/r/eveseat/eveseat-app/) |
-    | `eveseat/eveseat-worker` | [https://hub.docker.com/r/eveseat/eveseat-worker/](https://hub.docker.com/r/eveseat/eveseat-worker/) |
-    | `eveseat/eveseat-cron` | [https://hub.docker.com/r/eveseat/eveseat-cron/](https://hub.docker.com/r/eveseat/eveseat-cron/) |
-    
+
+| Image Name | Image Repository |
+| ---------- | ---------------- |
+| `mariadb:10.3` | [https://hub.docker.com/_/mariadb/](https://hub.docker.com/_/mariadb/) |
+| `redis:3` | [https://hub.docker.com/_/redis/](https://hub.docker.com/_/redis/) |
+| `eveseat/eveseat-nginx` | [https://hub.docker.com/r/eveseat/eveseat-nginx/](https://hub.docker.com/r/eveseat/eveseat-nginx/) |
+| `eveseat/eveseat-app` | [https://hub.docker.com/r/eveseat/eveseat-app/](https://hub.docker.com/r/eveseat/eveseat-app/) |
+| `eveseat/eveseat-worker` | [https://hub.docker.com/r/eveseat/eveseat-worker/](https://hub.docker.com/r/eveseat/eveseat-worker/) |
+| `eveseat/eveseat-cron` | [https://hub.docker.com/r/eveseat/eveseat-cron/](https://hub.docker.com/r/eveseat/eveseat-cron/) |
+
 - The environment is configured using a top level `.env` file (not to be confused with the SeAT specific `.env` file (which should be transparent to a docker user anyways.))
 - Only two ports are exposed by default. Those are `tcp/8080` and `tcp/8443`. These can be connected to in order to access the SeAT web interface.
 - All containers are configured to restart on failure, so if your server reboots or a container dies for whatever reason it should automatically start up again.

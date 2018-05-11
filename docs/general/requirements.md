@@ -1,8 +1,11 @@
-# Hardware Requirements
+![SeAT](https://i.imgur.com/aPPOxSK.png)
+
+# Requirements
+
+## Hardware Requirements
 
 As far as hardware goes, there isn't really a hard and fast rule on what is needed. The more resources you make available, the faster API updates will occur. However, there are some minimum *recommended* specifications.
 
-## Minimum Requirements
 | Type | Requirement |
 | ------- | ------- |
 | Memory | 1GB of RAM with a swap file. More is better. |
@@ -12,3 +15,16 @@ As far as hardware goes, there isn't really a hard and fast rule on what is need
 !!! warning
 
     If you intend to process a large amount of data, plan your storage accordingly. The SeAT database can grow incredibly quickly depending on the amount of tokens you process.
+
+## Software Requirements
+
+Software version requirements are based on a *minimum* requirement (Dockerized installation methods take care of these for you!). The requirements are:
+
+| Type | Requirement |
+| ------------ | ------------- |
+| Operating System | Any Linux-based distribution that can run PHP and a Web server should be fine.  For Windows, you will need Docker for Linux containers. We recommend you choose something like [Ubuntu LTS](https://www.ubuntu.com/) as it is well supported and tested. |
+| PHP | [PHP: 7.1](http://php.net/)|
+| Database | [MariaDB: ^10.2.7](https://mariadb.org/) or [MySQL: ^5.7](https://www.mysql.com/) |
+| Caching Service | [Redis](https://redis.io/)  |
+| Service Supervisor | [Supervisor : 3.x.x](http://supervisord.org/) |
+| Web Server | nginx, Apache |

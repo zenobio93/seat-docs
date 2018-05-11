@@ -56,11 +56,10 @@ Installing packages like this will ensure that none of the core SeAT packages ar
     since they are non longer maintained by their author or have been integrated in core.
 
 ### Other SeAT related packages
+
 - [Betriebsrat/err-seat](https://github.com/Betriebsrat/err-seat)  
 Seat Api Interface for errbot
 - [eve-scout/passport-eveseat](https://github.com/eve-scout/passport-eveseat)  
 Passport strategy for authenticating with EVE SeAT using the OAuth 2.0 API.
 - [eve-scout/nodebb-plugin-sso-eveseat](https://github.com/eve-scout/nodebb-plugin-sso-eveseat)  
 This NodeBB plugin allows users login/register via their EVE SeAT account.
-- [dysath/seat-fitting](https://github.com/dysath/seat-fitting)
-

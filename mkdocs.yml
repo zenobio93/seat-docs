@@ -13,7 +13,7 @@ copyright: 'Copyright &copy; 2015 - 2018 Leon Jacobs'
 # Documentation TOC
 pages:
     - Home: index.md
-    - Hardware Requirements: general/hardware_requirements.md
+    - Hardware / Software Requirements: general/requirements.md
     - Basic Installation:
         - SeAT Installation: guides/installation/basic_installation/installation.md
         - Configure Eve Online ESI Scopes: guides/installation/basic_installation/esi.md
@@ -22,14 +22,13 @@ pages:
             - Traefik: guides/installation/basic_installation/traefik.md
             - Nginx: guides/installation/basic_installation/nginx.md
             - Apache: guides/installation/basic_installation/apache.md
-    - (Advanced) Installation:
+    - Advanced Installation:
         - Getting Started: guides/installation/manual_installation/getting_started.md
-        - Manual Installation:
-            - Docker (recommended): guides/installation/manual_installation/docker.md
-            - Ubuntu: guides/installation/manual_installation/ubuntu.md
-            - CentOS 6.x: guides/installation/manual_installation/centos6.md
-            - CentOS 7.x: guides/installation/manual_installation/centos7.md
-            - Debian: guides/installation/manual_installation/debian.md
+        - Docker (recommended): guides/installation/manual_installation/docker.md
+        - Ubuntu: guides/installation/manual_installation/ubuntu.md
+        - CentOS 6.x: guides/installation/manual_installation/centos6.md
+        - CentOS 7.x: guides/installation/manual_installation/centos7.md
+        - Debian: guides/installation/manual_installation/debian.md
     - Admin Guides:
         - Docker Admin:  guides/admin/docker.md
         - Email Setup:
@@ -58,7 +57,7 @@ pages:
         - General Guide: guides/development/general.md
         - Core Package Breakdown: guides/development/package_breakdown.md
         - Package Development: guides/development/package_development.md
-        - SeAT API: seat_api.md
+        - SeAT API: guides/development/seat_api.md
     - Changelogs:
         - Api: changelogs/api.md
         - Console: changelogs/console.md

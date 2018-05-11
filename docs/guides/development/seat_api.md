@@ -1,20 +1,18 @@
 ![SeAT](https://i.imgur.com/aPPOxSK.png)
-## Introduction
-SeAT has a RESTful API. Endpoints are protected by a access token that is limited by IP address.
-For every IP address that wants to make API requests to SeAT, a unique token is required.  
-API Tokens have no concept of ACL's. The API should primarily be used for integration with other systems.
+
+# Introduction
+
+SeAT has a REST API. Endpoints are protected by an access token that is limited by IP address. For every IP address that wants to make API requests to SeAT, a unique token is required. API Tokens have no concept of ACL's. The API should primarily be used for integrations with other systems.
 
 ## Definitions
-Currently, all API endpoints live at `<seat url>/api/<version>` where `<seat url>` is the full url to your SeAT instance
-and `<version>` is the API version you wish to interact with.
 
-Since SeAT 3.0, it has been port to Swagger and its documentation is directly available from your instance at the
-following address `<seat url>/api/documentation`.
+Currently, all API endpoints live at `<seat url>/api/<version>` where `<seat url>` is the full url to your SeAT instance and `<version>` is the API version you wish to interact with.
+
+Since SeAT 3.0 api endpoint documentation is driven from within the source code and presented via a Swagger UI. As a result, endpoint documentation is now directly available on your instance at the following address `<seat url>/api/documentation`. A link to the documentation is also provided on the API key management page available to users with the Superuser role.
 
 ## Authentication
-Authentication to the SeAT API is done via a `X-Token` header.
-A token may be obtained by browsing to the API settings page in the SeAT WebUI and generating one.
-A sample request using `curl` with an authentication token can be seen below:
+
+Authentication to the SeAT API is done via a `X-Token` header. A token may be obtained by browsing to the API settings page in the SeAT WebUI and generating one. A sample request using `curl` with an authentication token can be seen below:
 
 ```bash
 $ curl -X GET -H "X-Token:123456" -H "Accept: application/json" http://localhost:8000/api/v1/key
@@ -34,11 +32,12 @@ $ curl -X GET -H "X-Token:123456" -H "Accept: application/json" http://localhost
 < Content-Type: application/json
 ```
 
-## Content-type
-Make sure you specify the Accepted content-type header as `application/json`.
-When using `cURL`, you can specify it with `-H`
+## Content-Type
+
+Make sure you specify the Accepted content-type header as `application/json`. When using `cURL`, you can specify it with `-H`
 
 Example:
+
 ```bash
 $ curl -X POST https://seat.testsite.local/api/v1/key -H "Accept: application/json" -H "X-Token: L3SxgdX4XUw6pVWVSCftgsh16eAbBF3D" -d "key_id=123&v_code=123"
 {"v_code":["The v code must be 64 characters."]}
@@ -47,6 +46,7 @@ $ curl -X POST https://seat.testsite.local/api/v1/key -H "Accept: application/js
 If you don't do this, the API will respond with a redirect and not give you the expected content.
 
 ## Errors
+
 All SeAT API responses will include the appropriate HTTP response codes. You should check this for error handling purposes. Some sample response codes could be:
 
 | Code | Status | Description |

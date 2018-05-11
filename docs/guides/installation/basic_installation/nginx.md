@@ -2,20 +2,16 @@
 
 # Nginx
 
-This site is still WIP and not in its final state. To get you going: Install nginx according to your host OS
-see guides here: 
+This page is still a work in progress and not in its final state. To get you going though, install nginx according for your host OS based on the guides here:
 
-* [Ubuntu](/guides/installation/manual_installation/ubuntu/#nginx)
-* [Debian](/guides/installation/manual_installation/debian/#web-service)
+- [Ubuntu](/guides/installation/manual_installation/ubuntu/#nginx)
+- [Debian](/guides/installation/manual_installation/debian/#web-service)
 
-## SSL-Support
+## Docker SSL-Support
 
-**WIP: 2018 use Let's encrypt/certbot**
+You can configure nginx to serve your docker-based instances web server via SSL with the following example nginx configuration used for a `www.seat.dev` domain:
 
-You need a nginx server, certbot (or SSL certificates) and a configuration like this example from a local dev-enviroment.
-
-````nano
-cat /usr/local/etc/nginx/conf.d/seat.dev.conf
+````conf
 server {
     listen 80;
     server_name seat.dev www.seat.dev *.seat.dev;
@@ -28,8 +24,8 @@ server {
     charset utf-8;
     client_max_body_size 128M;
 
-    ssl_certificate /Users/leonjza/.valet/Certificates/seat.dev.crt;
-    ssl_certificate_key /Users/leonjza/.valet/Certificates/seat.dev.key;
+    ssl_certificate ~/seat.dev.crt;
+    ssl_certificate_key ~/seat.dev.key;
 
     location / {
       access_log off;
@@ -42,3 +38,5 @@ server {
     }
 }
 ````
+
+Certificates should be managed using `certbot` which you can read more about [here](https://letsencrypt.org/getting-started/).
