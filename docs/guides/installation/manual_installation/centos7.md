@@ -12,7 +12,7 @@ Packages are installed using the `yum` package manager as the `root` user.
 ### table of contents
  1. [Repositories](#repositories)
  2. [Database](#database)
- 3. [PHP & Apache](#php--apache)
+ 3. [PHP & Apache](#php-apache)
  4. [Redis](#redis)
  5. [Composer and Git](#composer-and-git)
  6. [SeAT - Download](#seat-download)
