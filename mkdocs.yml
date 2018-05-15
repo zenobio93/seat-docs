@@ -47,12 +47,11 @@ pages:
             - General Upgrades: guides/admin/upgrade/general_upgrades.md
             - SeAT 1.0 to SeAT 2.0: guides/admin/upgrade/seat1_to_2.md
             - SeAT 2.0 to SeAT 3.0: guides/admin/upgrade/seat2_to_3.md
-    - Extra:
-        - Webservers:
-            - General: guides/installation/basic_installation/webserver.md
-            - Traefik: guides/installation/basic_installation/traefik.md
-            - Nginx: guides/installation/basic_installation/nginx.md
-            - Apache: guides/installation/basic_installation/apache.md
+    - Webservers:
+        - General: guides/installation/basic_installation/webserver.md
+        - Traefik: guides/installation/basic_installation/traefik.md
+        - Nginx: guides/installation/basic_installation/nginx.md
+        - Apache: guides/installation/basic_installation/apache.md
     - Developers Guides:
         - Developer Installation: guides/development/developer_installation.md
         - General Guide: guides/development/general.md
