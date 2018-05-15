@@ -97,7 +97,7 @@ docker-compose exec mariadb sh -c 'exec mysqldump "$MYSQL_DATABASE" -u"$MYSQL_US
 To restore a backup to a new dockerized instance of SeAT, run:
 
 ```bash
-cat seat_backup.sql | docker-compose exec mariadb sh -c 'exec mysql "$MYSQL_DATABASE" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"'
+cat seat_backup.sql | docker-compose exec -T mariadb sh -c 'exec mysql "$MYSQL_DATABASE" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"'
 ```
 
 ## Performing Updates
