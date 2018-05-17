@@ -58,6 +58,6 @@ EVE_CALLBACK_URL=http://seat.test/auth/eve/callback
 ```
 
 !!! warning "Docker Installations"
-     Your `.env` file is located in `/opt/seat-docker` rebuild your app after setting the ESI Details in it using:
+     Your `.env` file is located in `/opt/seat-docker`. Rebuild your app after setting the ESI Details in it using:
 
      `docker-compose up -d`
