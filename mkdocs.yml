@@ -78,13 +78,16 @@ theme:
         primary: 'grey'
         accent: 'indigo'
 
+google_analytics:
+  - 'UA-119530306-1'
+  - 'auto'
+
 # Customization
 markdown_extensions:
     - admonition
     - codehilite
     - toc:
         permalink: true
-# Customization
 extra:
   social:
     - type: 'github'
