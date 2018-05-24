@@ -444,7 +444,7 @@ Your configuration file should look similar to this:
 <VirtualHost *:80>
         ServerAdmin email@yourdomain.com
         ServerNAme yourdomain.com
-        DocumentRoot /var/www/seat/
+        DocumentRoot /var/www/seat/public
 
         <Directory /var/www/seat/public>
                 Options Indexes FollowSymLinks
