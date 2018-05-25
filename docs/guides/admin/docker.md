@@ -110,6 +110,9 @@ docker-compose pull
 
 # Apply the updates to your instllation
 docker-compose up -d
+
+# Cleanup any dangling images
+docker image prune -f
 ```
 
 !!! info "Better safe then sorry"
