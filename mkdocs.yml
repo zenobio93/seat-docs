@@ -21,8 +21,7 @@ pages:
         - Getting Started: guides/installation/manual_installation/getting_started.md
         - Docker (recommended): guides/installation/manual_installation/docker.md
         - Ubuntu: guides/installation/manual_installation/ubuntu.md
-        - CentOS 6.x: guides/installation/manual_installation/centos6.md
-        - CentOS 7.x: guides/installation/manual_installation/centos7.md
+        - CentOS: guides/installation/manual_installation/centos.md
         - Debian: guides/installation/manual_installation/debian.md
     - Admin Guides:
         - Docker Admin:  guides/admin/docker.md
