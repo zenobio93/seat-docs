@@ -19,10 +19,10 @@ pages:
         - Configure Eve Online ESI Scopes: guides/installation/basic_installation/esi.md
     - Advanced Installation:
         - Getting Started: guides/installation/manual_installation/getting_started.md
-        - Docker (recommended): guides/installation/manual_installation/docker.md
-        - Ubuntu: guides/installation/manual_installation/ubuntu.md
         - CentOS: guides/installation/manual_installation/centos.md
         - Debian: guides/installation/manual_installation/debian.md
+        - Docker: guides/installation/manual_installation/docker.md
+        - Ubuntu: guides/installation/manual_installation/ubuntu.md
     - Admin Guides:
         - Docker Admin:  guides/admin/docker.md
         - Email Setup:

@@ -5,7 +5,7 @@
 
 # Centos 7
 
-This guide attempts to explain how to manually install SeAT onto a **CentOS** Server. A small amount of Linux experience is preferred when it comes to this guide, all though it is not entirely mandatory.
+This guide attempts to explain how to manually install SeAT onto a **CentOS** Server. A small amount of Linux experience is preferred when it comes to this guide, although it is not entirely mandatory.
 
 ## Getting started
 
@@ -547,7 +547,7 @@ sudo -H -u nginx bash -c 'php /var/www/seat/artisan seat:admin:login'
 You'll get a link after the command has finished running which looks similar to the one bellow:
 
 ```txt
-root@ubuntu:/var/www/seat# sudo -H -u nginx bash -c 'php /var/www/seat/artisan seat:admin:login'
+[root@localhost nginx]# sudo -H -u nginx bash -c 'php /var/www/seat/artisan seat:admin:login'
 SeAT Admin Login URL Generator
 User 'admin' does not exist. It will be created.
 Searching for the 'Superuser' role

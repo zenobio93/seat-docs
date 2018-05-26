@@ -63,7 +63,7 @@ This will ask you a series of questions where you should generally just answer y
 ```bash
 [...]
 
-Enter current password for root (enter for none):  BY DEFAULT IT IS NONE, PRESS ENTER
+Enter current password for root (enter for none):  IF ONE WAS SET, IGNORE THIS
 OK, successfully used password, moving on...
 
 [...]
