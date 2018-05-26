@@ -14,9 +14,7 @@ copyright: 'Copyright &copy; 2015 - 2018 Leon Jacobs'
 pages:
     - Home: index.md
     - Requirements: general/requirements.md
-    - Basic Installation:
-        - SeAT Installation: guides/installation/basic_installation/installation.md
-        - Configure Eve Online ESI Scopes: guides/installation/basic_installation/esi.md
+    - Basic Installation: guides/installation/basic_installation/installation.md
     - Advanced Installation:
         - Getting Started: guides/installation/manual_installation/getting_started.md
         - CentOS: guides/installation/manual_installation/centos.md
@@ -25,6 +23,7 @@ pages:
         - Ubuntu: guides/installation/manual_installation/ubuntu.md
     - Admin Guides:
         - Docker Admin:  guides/admin/docker.md
+        - Configuring ESI: guides/installation/basic_installation/esi.md
         - Email Setup:
             - Using Mailgun: guides/admin/email/mailgun.md
             - Using Gmail: guides/admin/email/gmail.md

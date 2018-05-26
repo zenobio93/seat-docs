@@ -1,8 +1,8 @@
 ![SeAT](https://i.imgur.com/aPPOxSK.png)
 
-# Basic Installation
+# Basic SeAT Installation
 
-This guide aims to provide most users a simple step-by-step guide to having a running SeAT instance. SeAT provides two simple installation scripts. You would need to choose if you would rather use Docker (which is recommended) or the SeAT tool.
+This guide aims to provide most users a simple step-by-step guide to having a running SeAT instance. SeAT provides two simple installation scripts. You would need to choose if you would rather use Docker or the SeAT tool.
 
 !!! note
 
