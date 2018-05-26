@@ -1,5 +1,8 @@
 ![SeAT](https://i.imgur.com/aPPOxSK.png)
 
+!!! warning "CentOS Version"
+    This guide only caters for CentOS 7. If you _really_ want to run CentOS 6, you would either need to adapt this installation guide with the appropriate init scripts, or use the SeAT tool for installation.
+
 # Centos 7
 
 This guide attempts to explain how to manually install SeAT onto a **CentOS** Server. A small amount of Linux experience is preferred when it comes to this guide, all though it is not entirely mandatory.
