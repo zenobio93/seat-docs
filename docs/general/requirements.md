@@ -29,7 +29,7 @@ Software version requirements are based on a *minimum* requirement (Dockerized i
 | Service Supervisor | [Supervisor : 3.x.x](http://supervisord.org/) |
 | Web Server | nginx, Apache |
 
-For docker based installations, all you need is `docker` and `docker-compose`:
+For docker based installations, all you need is `docker` and `docker-compose`. If you already have it installed, check your current version with `docker version` and `docker-compose version` respectively:
 
 | Type | Requirement |
 | ------------ | ------------- |

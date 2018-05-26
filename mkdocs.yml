@@ -29,6 +29,7 @@ pages:
         - Email Setup:
             - Using Mailgun: guides/admin/email/mailgun.md
             - Using Gmail: guides/admin/email/gmail.md
+        - Env File Reference: guides/admin/env_reference.md
         - Job Queue Flow: guides/admin/job_queue_flow.md
         - Scaled SeAT Deployments: guides/admin/scaling_seat.md
         - Role Based Access Control: guides/admin/rbac.md
