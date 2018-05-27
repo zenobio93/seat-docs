@@ -20,6 +20,7 @@ pages:
         - CentOS: guides/installation/manual_installation/centos.md
         - Debian: guides/installation/manual_installation/debian.md
         - Docker: guides/installation/manual_installation/docker.md
+        - Manual: guides/installation/manual_installation/manual.md
         - Ubuntu: guides/installation/manual_installation/ubuntu.md
     - Admin Guides:
         - Docker Admin:  guides/admin/docker.md
