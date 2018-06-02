@@ -47,6 +47,7 @@ pages:
             - General Upgrades: guides/admin/upgrade/general_upgrades.md
             - SeAT 1.0 to SeAT 2.0: guides/admin/upgrade/seat1_to_2.md
             - SeAT 2.0 to SeAT 3.0: guides/admin/upgrade/seat2_to_3.md
+        - Troubleshooting: guides/admin/troubleshooting.md
     - Webservers:
         - General: guides/installation/basic_installation/webserver.md
         - Traefik: guides/installation/basic_installation/traefik.md
