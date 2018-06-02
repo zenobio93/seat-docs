@@ -8,7 +8,10 @@ SeAT has a REST API. Endpoints are protected by an access token that is limited 
 
 Currently, all API endpoints live at `<seat url>/api/<version>` where `<seat url>` is the full url to your SeAT instance and `<version>` is the API version you wish to interact with.
 
-Since SeAT 3.0 api endpoint documentation is driven from within the source code and presented via a Swagger UI. As a result, endpoint documentation is now directly available on your instance at the following address `<seat url>/api/documentation`. A link to the documentation is also provided on the API key management page available to users with the Superuser role.
+Since SeAT 3.0, API documentation is generated from source code annotations and presented via a Swagger UI. As a result, endpoint documentation is now directly available on your instance at the following address `<seat url>/api/documentation`. A link to the documentation is also provided on the API key management page available to users with the Superuser role.
+
+!!! warning "Swagger JSON"
+    If you get an error when viewing the API documentation that complains about a file called `api-docs.json`, make sure that you ran the `php artisan l5-swagger:generate` command as part of the installation and upgrade routines.
 
 ## Authentication
 
