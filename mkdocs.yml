@@ -59,6 +59,7 @@ pages:
         - Core Package Breakdown: guides/development/package_breakdown.md
         - Package Development: guides/development/package_development.md
         - SeAT API: guides/development/seat_api.md
+        - Development Tips: guides/development/tips.md
     - Changelogs:
         - Api: changelogs/api.md
         - Console: changelogs/console.md

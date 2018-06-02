@@ -6,6 +6,8 @@
 
 So, you want to write a SeAT package? Hopefully this guide helps you along the way! This guide was written while writing the API package for SeAT [here](https://github.com/eveseat/api). I figured it would be best to try and capture the process to help in case I miss any important details.
 
+Be sure to also have a look at the [Development Tips](/guides/development/tips/) page!
+
 ## Background notes
 
 I think its important to keep in mind a few things about how SeAT is put together. The most important being a brief description of what each core package offers, and how you can integrate with them. For a breakdown on what the core packages provide, please refer the to breakdown [here](/guides/development/package_breakdown/).
@@ -13,19 +15,6 @@ I think its important to keep in mind a few things about how SeAT is put togethe
 SeAT 3 is written on [Laravel 5.5](http://laravel.com/docs/5.5). A **very** good thing to do would be to actually read the documentation top->bottom and get an idea of what is possible with the framework. SeAT core packages make heavy use of many of the features, based directly of what has been interpreted by this very documentation.
 
 If you really want to start contributing packages, but juts cant get your head around this whole Laravel thing, then I can suggest you have a look at this excellent free course material covering the basics of what you will encounter in the SeAT codebase. [https://laracasts.com/series/laravel-5-fundamentals](https://laracasts.com/series/laravel-5-fundamentals)
-
-## Best practices
-
-No doubt, there are no limits to what code you can write, how you structure it and how you name things. However, the last thing you want is to have conflicts with the SeAT core, or someone elses package! The following list contains some tips to help you avoid those conflicts and to help people better discover your packages:
-
-- Prefix your github repository name with `seat` eg: `seat-teamspeak`.
-- Tag your github repository with `seat`.
-- Use a unique package namespace such as `Author\Seat\Package\` eg: `Warlof\Seat\Teamspeak\`.
-- Prefix your database table names with something unique to your package. eg `warlof_teamspeak_users`.
-- Do not modify core tables. This will break future updates for users of your package.
-- Prefix your settings with both an author and package eg: `warlof.teamspeak.address`.
-- Prefix redis records with both author and package eg: `warlof.teamspeak.channels`.
-- In your `composer.json` file, set the `type` to `seat-plugin`.
 
 ## Getting started
 
