@@ -88,16 +88,16 @@ docker-compose logs --tail 5 -f seat-app
 
 ## Database Backups and Restore
 
-Backups. They are important and really simple to do. To perform a backup of the current database used within the docker stack, run:
+Backups. They are important and really simple to do. To perform a backup of the current database used within the docker stack, compressing and saving it to a file called `seat_backup.sql.gz`, run:
 
 ```bash
-docker-compose exec mariadb sh -c 'exec mysqldump "$MYSQL_DATABASE" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"' > seat_backup.sql
+docker-compose exec mariadb sh -c 'exec mysqldump "$MYSQL_DATABASE" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"' | gzip > seat_backup.sql.gz
 ```
 
 To restore a backup to a new dockerized instance of SeAT, run:
 
 ```bash
-cat seat_backup.sql | docker-compose exec -T mariadb sh -c 'exec mysql "$MYSQL_DATABASE" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"'
+zcat seat_backup.sql.gz | docker-compose exec -T mariadb sh -c 'exec mysql "$MYSQL_DATABASE" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"'
 ```
 
 ## Performing Updates
