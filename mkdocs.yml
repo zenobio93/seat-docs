@@ -17,7 +17,6 @@ pages:
       - Requirements: installation/requirements.md
       - Basic Installation: installation/basic_installation.md
       - Docker Installation: installation/docker_installation.md
-      - Scaled Deployments: installation/scaled_deployments.md
       - Manual Installation:
         - Getting Started: installation/manual/getting_started.md
         - CentOS: installation/manual/centos.md
@@ -45,6 +44,7 @@ pages:
       - Docker Admin: admin_guides/docker_admin.md
       - Role Based Access Control: admin_guides/role_based_access_control.md
       - Understanding Tracking: admin_guides/understanding_tracking.md
+      - Scaled Deployments: admin_guides/scaled_deployments.md
     - Developer Guides:
       - Developer Installation: developer_guides/developer_installation.md
       - General Guide: developer_guides/general_guide.md

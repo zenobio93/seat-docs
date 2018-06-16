@@ -23,10 +23,10 @@ Software version requirements are based on a *minimum* requirement.
 | ------------ | ------------- | ------------- |
 | Operating System | Linux, preferably Ubuntu, Debian or CentOS. For Windows, you will need [Docker for Windows](https://docs.docker.com/docker-for-windows/). | Usually, running `cat /etc/issue` should give you a good idea. |
 | Architecture | 64-bit only | `uname -p` |
-| PHP | [PHP: 7.1](http://php.net/)| `php -v` |
+| PHP | [PHP: ^7.1](http://php.net/)| `php -v` |
 | Database | [MariaDB: ^10.2.7](https://mariadb.org/) or [MySQL: ^5.7](https://www.mysql.com/) | `mysql -V` |
 | Caching Service | [Redis](https://redis.io/)  | `redis-server -v` |
-| Service Supervisor | [Supervisor : 3.x.x](http://supervisord.org/) | `supervisord -v` |
+| Service Supervisor | [Supervisor : 3](http://supervisord.org/) | `supervisord -v` |
 | Web Server | nginx, Apache | `nginx -v` |
 
 For docker based installations, all you need is `docker` and `docker-compose`. If you already have it installed, check your current version with `docker version` and `docker-compose version` respectively:
@@ -38,4 +38,4 @@ For docker based installations, all you need is `docker` and `docker-compose`. I
 
 !!! warning
 
-    Do not install Docker directly from your distribution repository as provided package are out-dated. Follow [Docker official Documentation](https://docs.docker.com/install/)
+    Do not install Docker directly from your distributions repositories. These are usually out of date. Instead, rather follow the steps provided on dockers [official documentation](https://docs.docker.com/install/)
