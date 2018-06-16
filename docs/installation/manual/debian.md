@@ -172,7 +172,7 @@ That concludes the database server setup. You can exit the prompt with `exit`;
 
 ### PHP
 
-Since SeAT is written primarily in PHP, we will need to install PHP packages. Currently only PHP 7.1 is supported due to issues with Laravel (the framework SeAT is built on) and PHP 7.2. This should change in the very near future. Debian based systems can make use of [Sury DPA](https://deb.sury.org/) which is a very popular repository used for specific PHP versions.
+Since SeAT is written primarily in PHP, we will need to install PHP packages. Debian based systems can make use of [Sury DPA](https://deb.sury.org/) which is a very popular repository used for specific PHP versions.
 
 Depending on the version of Debian you are using, a release specific repository URL should be used for the repository. Select the tab applicable to your Debian version and run the commands within.
 
@@ -208,7 +208,7 @@ apt-get update
 Finally, install the required PHP packages with:
 
 ```bash
-apt-get install curl zip php7.1-cli php7.1-mysql php7.1-mcrypt php7.1-intl php7.1-curl php7.1-gd php7.1-mbstring php7.1-bz2 php7.1-dom php7.1-zip
+apt-get install curl zip php7.2-cli php7.2-mysql php7.2-intl php7.2-curl php7.2-gd php7.2-mbstring php7.2-bz2 php7.2-dom php7.2-zip
 ```
 
 ### Redis
@@ -412,7 +412,7 @@ The SeAT web interface requires a web server to serve the HTML goodies it has. W
 Together with an `nginx` installation we also need to install `php-fpm` to handle the PHP execution for us. Let's install `nginx` and `php-fpm` with:
 
 ```bash
-apt-get install nginx php7.1-fpm
+apt-get install nginx php7.2-fpm
 ```
 
 #### Nginx Configuration
@@ -480,7 +480,7 @@ Finally, reload `nginx` and `php-fpm` for the new changes to take affect:
 
 ```bash
 systemctl restart nginx.service
-systemctl restart php7.1-fpm.service
+systemctl restart php7.2-fpm.service
 ```
 
 ### Admin Login

@@ -14,7 +14,7 @@ A manual installation of SeAT is actually not that bad. All you need to do reall
 
 OS Dependencies are:
 
-- PHP 7.1
+- PHP 7.1 or newer
 - MariaDB / MySQL server
 - Redis server
 

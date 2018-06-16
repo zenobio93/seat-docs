@@ -166,7 +166,7 @@ That concludes the database server setup. You can exit the prompt with `exit`;
 
 ### PHP
 
-Since SeAT is written primarily in PHP, we will need to install PHP packages. Currently only PHP 7.1 is supported due to issues with Laravel (the framework SeAT is built on) and PHP 7.2. This should change in the very near future. Ubuntu based systems can make use of the [ondrej PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php) which is a very popular repository used for specific PHP versions.
+Since SeAT is written primarily in PHP, we will need to install PHP packages. Ubuntu based systems can make use of the [ondrej PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php) which is a very popular repository used for specific PHP versions.
 
 Depending on the version of Ubuntu you are using, a release specific repository URL should be used for the PPA. Select the tab applicable to your Ubuntu version and run the commands within.
 
