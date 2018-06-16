@@ -294,7 +294,7 @@ This will ensure that the web server, cron jobs and workers have access to the s
 
 ### SeAT Setup
 
-With SeAT downloaded, we need to configure it. There are a number of configuration tasks needed. These include editing the applications `.env` file as well as running some commands that setup and seed the database. A configuration value reference can be found [here](/guides/admin/env_reference/).
+With SeAT downloaded, we need to configure it. There are a number of configuration tasks needed. These include editing the applications `.env` file as well as running some commands that setup and seed the database. A configuration value reference can be found [here](/configuration/env_file_reference/).
 
 #### .env setup
 
@@ -507,11 +507,13 @@ http://localhost/auth/login/admin/9G3sb8hjMvrbIJrIf10KKtIj1c8e9mL5
 Copy it and paste it inside your browser and you will be authenticated as the admin user.
 
 !!! warning
+
         If you have not configured the `APP_URL` setting in the `.env` file, then the admin url will be generated for `localhost`. This is most likely incorrect and you can simply replace `localhost` with your IP address or domain name.
 
 ## ESI Configuration
 
-As mentioned at the start of the guide, it is necessary for you to configure ESI. FOr instructions now how to do this, please refer to the [ESI Setup Guide](/guides/installation/basic_installation/esi/).
+As mentioned at the start of the guide, it is necessary for you to configure ESI. For instructions now how to do this, please refer to the [ESI Setup Guide](/configuration/esi_configuration/).
 
 !!! success
+
         You made it! Use a browser and browse to the IP address / hostname of your server to access SeAT!
