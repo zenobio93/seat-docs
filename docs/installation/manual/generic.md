@@ -35,7 +35,7 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 Install SeAT _itself_ with:
 
 ```bash
-composer create-project eveseat/seat --no-dev --stability=beta
+composer create-project eveseat/seat --no-dev
 ```
 
 ### Setup SeAT

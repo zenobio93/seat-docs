@@ -268,7 +268,7 @@ cd /var/www
 With all of the prerequisites installed as well as our `www` directory ready we can finally download SeAT. Do that with:
 
 ```bash
-composer create-project eveseat/seat --no-dev --stability=beta
+composer create-project eveseat/seat --no-dev
 ```
 
 Once the download is done, you should have seen output such as:

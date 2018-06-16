@@ -60,10 +60,5 @@ If you would prefer less automation, or you  already have existing services on y
 
     <p>To configure ESI for SSO and API pulls, please refer to the <a href="/configuration/esi_configuration/">Configuring ESI</a> documentation page</p>
 
-    <div class="admonition note">
-        <p class="admonition-title"> Note</p>
-        <p>During the beta of SeAT 3x, please run <code>seat install:production --minimum-stability beta</code> instead. This will tell the installer that versions that are marked as non-stable is ok to use.</p>
-    </div>
-
 </div>
 </section>
