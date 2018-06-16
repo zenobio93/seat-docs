@@ -52,7 +52,7 @@ pages:
       - Development Tips: developer_guides/development_tips.md
       - Core Package Breakdown: developer_guides/core_package_breakdown.md
       - Package Development: developer_guides/package_development.md
-      - SeAT API: developers_guide/seat_api.md
+      - SeAT API: developer_guides/seat_api.md
     - Community Packages: community_packages.md
     - Troubleshooting: troubleshooting.md
     - About:
