@@ -1,7 +1,7 @@
 # Information
 site_name: 'SeAT Documentation'
 site_description: 'Simple EVE Api Tool Documentation'
-site_url: 'https://github.com/eveseat/docs'
+site_url: 'https://eveseat.github.io/docs'
 
 # Repository
 repo_name: 'eveseat/docs'
