@@ -11,7 +11,7 @@ repo_url: 'https://github.com/eveseat/docs'
 copyright: 'Copyright &copy; 2015 - 2019 Leon Jacobs'
 
 # Documentation TOC
-pages:
+nav:
     - Home: index.md
     - Installation:
       - Requirements: installation/requirements.md
