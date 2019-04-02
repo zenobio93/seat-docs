@@ -10,7 +10,7 @@ As mentioned in numerous other places, docker is ideally the installation route 
 
 ## Docker Requirements
 
-In terms of performance, the same hardware requirements apply to docker installations as others. For information about the hardware requirements for SeAT, please see [this](/installation/requirements/#hardware-requirements) page. The only major difference between docker and other installation options is that the containers themselves may take up a few hundred MB's of extra space. In most cases this should be a non-issue.
+In terms of performance, the same hardware requirements apply to docker installations as others. For information about the hardware requirements for SeAT, please see [this] page. The only major difference between docker and other installation options is that the containers themselves may take up a few hundred MB's of extra space. In most cases this should be a non-issue.
 
 !!! warning
 
@@ -128,3 +128,5 @@ These commands will `cd` to the directory containing the stacks `docker-compose.
 All of the relevant configuration lives inside the `.env` file, next to your `docker-compose.yml` file. Modify its values by opening it in a text editor, making the appropriate changes and saving it again. Once that is done, run `docker-compose up -d` again to restart the container environment.
 
 If you followed along until now with the docker installation, the next step would be to login as an administrator and to configure SSO. #WIP#
+
+[this]: requirements.md#hardware-requirements

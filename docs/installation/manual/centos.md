@@ -322,7 +322,7 @@ That is really it. Pretty painless eh?
 
 ### SeAT Setup
 
-With SeAT downloaded, we need to configure it. There are a number of configuration tasks needed. These include editing the applications `.env` file as well as running some commands that setup and seed the database. A configuration value reference can be found [here](/guides/admin/env_reference/).
+With SeAT downloaded, we need to configure it. There are a number of configuration tasks needed. These include editing the applications `.env` file as well as running some commands that setup and seed the database. A configuration value reference can be found [here].
 
 #### .env setup
 
@@ -569,7 +569,10 @@ Copy it and paste it inside your browser and you will be authenticated as the ad
 
 ## ESI Configuration
 
-As mentioned at the start of the guide, it is necessary for you to configure ESI. For instructions now how to do this, please refer to the [ESI Setup Guide](/configuration/esi_configuration/).
+As mentioned at the start of the guide, it is necessary for you to configure ESI. For instructions now how to do this, please refer to the [ESI Setup Guide].
 
 !!! success
         You made it! Use a browser and browse to the IP address / hostname of your server to access SeAT!
+
+[here]: ../../configuration/env_file_reference.md
+[ESI Setup Guide]: ../../configuration/esi_configuration.md

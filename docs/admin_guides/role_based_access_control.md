@@ -3,7 +3,7 @@
 # Role Based Access Control
 
 ## Introduction
-SeAT supports configuring user access control by means of [Role-based Access Control](https://en.wikipedia.org/wiki/Role-based_access_control). This allows for SeAT administrators to granularly control who has access to what based on which roles a SeAT user has.
+SeAT supports configuring user access control by means of [Role-based Access Control]. This allows for SeAT administrators to granularly control who has access to what based on which roles a SeAT user has.
 
 ## Definitions
 This section aims to clear up the definitions used in the SeAT RBAC (Role-based Access Control) implementation.
@@ -38,7 +38,7 @@ Your configured role from the above example may now look as follows:
 ![corp accountant role](https://i.imgur.com/fF1IUqT.png)
 
 ## Permissions
-The next list is a short definition of what the currently available permissions are and which sections of SeAT they grant access to. For the latest list of available permissions, please refer to the definitions file in the `eveseat/web` package [here](https://github.com/eveseat/web/blob/master/src/Config/web.permissions.php).
+The next list is a short definition of what the currently available permissions are and which sections of SeAT they grant access to. For the latest list of available permissions, please refer to the definitions file in the `eveseat/web` package [here].
 
 **Affiliation** column shows if the permissions considers affiliations.  
 **Dangerous** column shows if the permission could be harmful if granted to the wrong user.
@@ -100,3 +100,6 @@ The next list is a short definition of what the currently available permissions 
 | corporation.summary  | Yes         | No        | Grants the ability to view Corporation Summary. **NOTE:** This is also the default view when selecting a corporation from the corporation list. It is recommended you grant this role in addition to any other corporation role. |
 | corporation.wallet_journal  | Yes         | No        | Grants the ability to view Corporation Wallet Journal. |
 | corporation.transactions  | Yes         | No        | Grants the ability to view Corporation Wallet Transactions. |
+
+[Role-based Access Control]: https://en.wikipedia.org/wiki/Role-based_access_control
+[here]: https://github.com/eveseat/web/blob/master/src/Config/web.permissions.php

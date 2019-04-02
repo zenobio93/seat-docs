@@ -6,8 +6,8 @@
 
     This page is still a work in progress and not in its final state. To get you going though, install nginx according for your host OS based on the guides here:
 
-- [Ubuntu](/installation/manual/ubuntu/#web-server)
-- [Debian](/installation/manual/debian/#web-server)
+- [Ubuntu]
+- [Debian]
 
 ## Docker SSL-Support
 
@@ -42,3 +42,6 @@ server {
 ````
 
 Certificates should be managed using `certbot` which you can read more about [here](https://letsencrypt.org/getting-started/).
+
+[Ubuntu]: ../manual/ubuntu.md#web-server
+[Debian]: ../manual/debian.md#web-server

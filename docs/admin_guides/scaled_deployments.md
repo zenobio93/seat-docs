@@ -41,8 +41,8 @@ Services that should be shared between all SeAT components are:
 - The MariaDB database.
 
 When mentioning these components, they can definitely exist in their clustered/load balanced forms.
-For Redis, have a look at their [Redis cluster tutorial](https://redis.io/topics/cluster-tutorial) and for MariaDB,
-you can have a look at their [MariaDB cluster installation](https://mariadb.com/kb/en/library/getting-started-with-mariadb-galera-cluster/).
+For Redis, have a look at their [Redis cluster tutorial] and for MariaDB,
+you can have a look at their [MariaDB cluster installation].
 
 ## Simple scaled setup
 The following example setup is probably the most simple option to gain performance improvements by scaling out.
@@ -95,3 +95,6 @@ To setup a job dispatcher component, use the following steps:
 - Download SeAT somewhere like `/var/www/seat` using `composer create-project eveseat/seat /var/www/seat --no-dev`.
 - Once installed, configure the `.env` files database and Redis settings to connect to your [immutable sources](#immutable-resources).
 - Setup the cronjob to run `php artisan schedule:run 1>> /dev/null 2>&1` every minute.
+
+[Redis cluster tutorial]: https://redis.io/topics/cluster-tutorial
+[MariaDB cluster installation]: https://mariadb.com/kb/en/library/getting-started-with-mariadb-galera-cluster/

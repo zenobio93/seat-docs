@@ -2,7 +2,7 @@
 
 !!! info "Docker-based Installation Instructions"
 
-    The upgrade procedure for Docker is extremely simple and documented [here](/admin_guides/docker_admin/#performing-updates). This guide applies to any other installation type only.
+    The upgrade procedure for Docker is extremely simple and documented [here]. This guide applies to any other installation type only.
 
 # General Upgrades
 
@@ -79,3 +79,5 @@ supervisorctl restart all
 ```bash
 php artisan up
 ```
+
+[here]: ../admin_guides/docker_admin.md#performing-updates

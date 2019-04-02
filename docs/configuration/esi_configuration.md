@@ -16,12 +16,12 @@ If you have not configured this yet, the login page will present you with a warn
 
 A bit of setup work is needed in order to have your SeAT setup ready for SSO integration and ESI usage. The gist of it is:
 
-- [Step I](#register-your-application): Register your application on the EVE Online Developers portal [here](https://developers.eveonline.com/applications) for both Authentication and API Access.
-- [Step II](#set-config-parameters-in-env-file): Configure your `EVE_CLIENT_ID`, `EVE_CLIENT_SECRET` and `EVE_CALLBACK_URL` in the `.env` configuration [file](https://github.com/eveseat/seat/blob/b067bd3e742a79c35b5fa44ff77380a9187a27cf/.env.example#L21-L23).
+- [Step I](#register-your-application): Register your application on the [EVE Online Developers portal] for both Authentication and API Access.
+- [Step II](#set-config-parameters-in-env-file): Configure your `EVE_CLIENT_ID`, `EVE_CLIENT_SECRET` and `EVE_CALLBACK_URL` in the `.env` configuration [file]
 
 ## Register your application
 
-Browse to [https://developers.eveonline.com/applications](https://developers.eveonline.com/applications) and create a new Application.
+Browse to the [EVE Online Developers portal] and create a new Application.
 
 ![new sso application](https://i.imgur.com/QcedExJ.png)
 
@@ -61,3 +61,6 @@ EVE_CALLBACK_URL=http://seat.test/auth/eve/callback
      Your `.env` file is located in `/opt/seat-docker`. Rebuild your app after setting the ESI Details in it using:
 
      `docker-compose up -d`
+
+[EVE Online Developers portal]: https://developers.eveonline.com/applications
+[file]: https://github.com/eveseat/seat/blob/b067bd3e742a79c35b5fa44ff77380a9187a27cf/.env.example#L21-L23

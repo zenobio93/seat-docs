@@ -3,10 +3,12 @@
 # Contact
 
 Have a question? Want to say thank you? Need to express your opinion on SeAT? Find us on Slack!
-We are on the [eve-seat](https://eve-seat.slack.com/) slack team. Get invites [here](https://eveseat-slack.herokuapp.com) [![Slack Status](https://eveseat-slack.herokuapp.com/badge.svg)](https://eveseat-slack.herokuapp.com/)
+We are on the [eve-seat] slack team. Get invites [here] [![Slack Status](https://eveseat-slack.herokuapp.com/badge.svg)](https://eveseat-slack.herokuapp.com/)
 
 ## EVE Online Forum Thread
 
-Track the conversation on the EVE Online forums here:
+Track the conversation on the [EVE Online Forums].
 
-[https://forums.eveonline.com/default.aspx?g=posts&t=460658&find=unread](https://forums.eveonline.com/default.aspx?g=posts&t=460658&find=unread)
+[here]: https://eveseat-slack.herokuapp.com
+[eve-seat]: https://eve-seat.slack.com
+[EVE Online forums]: https://forums.eveonline.com/default.aspx?g=posts&t=460658&find=unread

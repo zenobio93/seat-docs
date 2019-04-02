@@ -40,9 +40,9 @@ This repository contains a set of scheduled jobs that perform notifications type
 
 ### eveseat/web
 
-Namespace: **Seat\Eveapi**
+Namespace: **Seat\Web**
 
-Source Code: [link](https://github.com/eveseat/eveapi)
+Source Code: [link](https://github.com/eveseat/web)
 
 This repository contains the web interface for SeAT. It contains by far the most complex [service provider](https://github.com/eveseat/web/blob/master/src/WebServiceProvider.php) and will undoubtedly become the prime example/reference when developing packages for SeAT. This package is also the only one that has a permissions / ACL concept. Refer the to the permissions document for more information.
 

@@ -80,4 +80,6 @@ Next, download and configure supervisord and have it keep the `php artisan horiz
 
 ### ESI and SSO Configuration
 
-Finally, setup the ESI / SSO environment as described in [this](/configuration/esi_configuration/) document.
+Finally, setup the ESI / SSO environment as described in [this] document.
+
+[this]: ../../configuration/esi_configuration.md

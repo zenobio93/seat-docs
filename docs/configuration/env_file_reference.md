@@ -25,3 +25,5 @@ In both the case of a Docker installation as well as a host based installation (
 | EVE_CLIENT_ID | null | This is the EVE Application Client ID you'll get when you created an application over https://developers.eveonline.com |
 | EVE_CLIENT_SECRET | null | This is the EVE Application Client Secret you'll get when you created an application over https://developers.eveonline.com |
 | EVE_CALLBACK_URL | https://seat.local/auth/eve/callback | This is the EVE Application Callback URL you filled when you created an application over https://developers.eveonline.com. You should have only to fix `seat.local` |
+| QUEUE_BALANCING_MODE | false | Determine the workers balancing mode used by the Jobs Manager. Value can be `false`, `auto` or `simple`. See [official Laravel documentation](https://laravel.com/docs/5.8/horizon#balance-options) for more details |
+| QUEUE_WORKERS | 4 | Determine the amount of worker which have to be spawn to process jobs over all queues. In `auto` and `simple` balancing, this value cannot be lower than `4` as it's correspond to the available queues. |

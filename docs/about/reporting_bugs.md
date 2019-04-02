@@ -2,7 +2,7 @@
 
 # Reporting Bugs
 
-So, you think its time to report an issue. Awesome! However, before you do this, *please* go through the [troubleshooting](/troubleshooting/) steps first to identify any common errors that you might be able to to fix yourself.
+So, you think its time to report an issue. Awesome! However, before you do this, *please* go through the [troubleshooting] steps first to identify any common errors that you might be able to to fix yourself.
 
 ## The more info, the better
 
@@ -26,4 +26,7 @@ Screenshots may also help, so don't be shy to take some and attach them to your 
 
 ## Report the bug
 
-Finally, to report the bug, head over to [https://github.com/eveseat/seat/issues](https://github.com/eveseat/seat/issues) and click on **New Issue**.
+Finally, to report the bug, head over to [Github Issues] and click on **New Issue**.
+
+[troubleshooting]: ../troubleshooting.md
+[Github Issues]: https://github.com/eveseat/seat/issues
