@@ -16,6 +16,13 @@ The dreaded "Whoops" message has appeared and now you need to figure out why. No
 
 In either case, the next steps to perform when seeing this would be to either [enable debug mode](#enabling-debug-mode) and reloading the page / request that failed, or by viewing the log file while retrying the failed request.
 
+## Memory Errors
+
+> Fatal error: Allowed memory size of #### bytes exhausted (tried to allocate 4096 bytes)...
+
+If you are presented with an error below similar to this after "Updating Dependencies" you must append your .ENV file with `COMPOSER_MEMORY_LIMIT= -1` and run `docker-compose up -d` if you are using docker. Note: spacing is important for this parameter, if you are unsure copy/paste the needed line into your .ENV file.
+
+
 ### Enabling Debug Mode
 
 Debug mode controls how much information about an error condition is displayed to the user. When debug mode is enabled, the error message will be _extremely verbose_, whereas when its disabled, it simply states that an error had occurred. In either case, the error will always be written to the logs. By default, SeAT does not have debug mode enabled. There are many reasons for this with the primary reason being security related. It goes without saying that once you have completed debugging and fixing your instance, always make sure you **disable debug mode** afterwards.
