@@ -23,11 +23,10 @@ have been made in SeAT 4.0.
     Pay attention if you made changes on your own and adapt provided instructions accordingly.
     
     Last but not least, we assume you are authenticated against your server as root user.
-    
-!!! warning 
-        
+
+!!! warning
     This guide is for those who have a blade install and does not apply to docker installations!
-            
+
 ## Requirements
 
 - Check [SeAT 4.0 requirements]
@@ -89,13 +88,13 @@ apt-get install curl openssl zip php7.3-bz2 php7.3-cli php7.3-curl php7.3-dom ph
 
 Remember to update your NGinX configuration to use the new CGI version. To do so, open configuration file located at `/etc/nginx/sites-available/seat` and replace
 
-```
+```text
        fastcgi_pass unix:/run/php/php7.1-fpm.sock;
 ```
 
 with
 
-```
+```text
        fastcgi_pass unix:/run/php/php7.3-fpm.sock;
 ```
 
