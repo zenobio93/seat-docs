@@ -27,6 +27,20 @@ If you are currently using a docker installation for SeAT 3, you are in for a tr
 
 This guide is going to sterp through some quick preperation steps, then perform the upgrade and finally, check that everything worked out as expected. Let's dive in.
 
+### tl;dr upgrades
+
+We highly reccomend that you read the details of this upgrade guide to get familiar with what has changed. But, if this is your nth upgrade, maybe you just want to get the summary of everything, so here it is:
+
+- Make a [backup](/admin_guides/docker_admin/#database-backups-and-restore) of your database.
+- `cd` to your install dir (which is probably `/opt/seat-docker`) and bring the stack down with `docker-compose down`
+- Make a copy of your `.env` and `docker-compose.yml` files.
+- Download the new `docker-compose.yml` file with `curl -L https://raw.githubusercontent.com/eveseat/seat-docker/master/docker-compose.yml -o docker-compose.yml`.
+- Down the new `.env` file with `curl -L https://raw.githubusercontent.com/eveseat/seat-docker/master/.env -o .env`.
+- Configure the new `.env` file. Important configs include the `TRAEFIK_` variables, the `SEAT_SUBDOMAIN` variable. Copy over existing values from your old `.env` file for the `EVE_CLIENT_` variables, the `APP_KEY` varaible and finally the `DB_` variables.
+- Bring the stack back up with `docker-compose up -d` and watch the migration process.
+
+🎉
+
 ### Docker changes since SeAT 3
 
 A number of changes have been made how the docker-compose stack is glued together.
@@ -92,7 +106,7 @@ curl -L https://raw.githubusercontent.com/eveseat/seat-docker/master/docker-comp
 
 With this we have created a copy of the older docker-compose file (just in case), and downloaded the new one.
 
-#### Get the new env file
+#### Get the new .env file
 
 The next step is to get a fresh copy of the new `.env` file to use together with the new docker-compose setup. There have been a number of changes to this file (primarily as a result of the web server swap out) which we will describe in the next section.
 
@@ -103,10 +117,10 @@ mv .env .env.back
 curl -L https://raw.githubusercontent.com/eveseat/seat-docker/master/.env -o .env
 ```
 
-#### Configure the new env file
+#### Configure the new .env file
 
 !!! info
-    This is admitedly the hardest part of the migtation, so pay close attention. Take it slowly and thing about what you are doing here.
+    This is admitedly the hardest part of the migtation, so pay close attention. Take it slowly and think about what you are doing here.
 
 There are four main settings categories that need to be updated in the new `.env` file. Those are:
 
