@@ -36,6 +36,7 @@ We highly reccomend that you read the details of this upgrade guide to get famil
 - Make a copy of your `.env` and `docker-compose.yml` files.
 - Download the new `docker-compose.yml` file with `curl -L https://raw.githubusercontent.com/eveseat/seat-docker/master/docker-compose.yml -o docker-compose.yml`.
 - Down the new `.env` file with `curl -L https://raw.githubusercontent.com/eveseat/seat-docker/master/.env -o .env`.
+- Upgrade your `docker-compose` installation. It should be version `1.26` and up.
 - Configure the new `.env` file. Important configs include the `TRAEFIK_` variables, the `SEAT_SUBDOMAIN` variable. Copy over existing values from your old `.env` file for the `EVE_CLIENT_` variables, the `APP_KEY` varaible and finally the `DB_` variables.
 - Bring the stack back up with `docker-compose up -d` and watch the migration process.
 
@@ -62,6 +63,17 @@ The single most important thing you need is a backup of your SeAT 3 database. Wi
 #### Backup your env file
 
 The `.env` file is the one that has your SeAT installations' configuration. It contains things like your SSO Client ID and Secret (aka: credentials). By default, SeAT docker installations live in `/opt/seat-docker` meaning your `.env` file will be at `/opt/seat-docker/.env`. Make a copy of this file and store it somewhere safe.
+
+#### Upgrade docker-compose
+
+The `docker-compose` binary should be upgraded so that we can make use of `${VARIABLES}` inside `.env` files.
+
+If you installed `docker-compose` using your OS' package manager, upgrade the tool using that. Otherwise, a `curl` invocation to download the latest version should also work.
+
+```bash
+curl -L https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
 
 #### Stop SeAT 3
 
