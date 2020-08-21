@@ -39,6 +39,7 @@ We highly reccomend that you read the details of this upgrade guide to get famil
 - Upgrade your `docker-compose` installation. It should be version `1.26` and up.
 - Configure the new `.env` file. Important configs include the `TRAEFIK_` variables, the `SEAT_SUBDOMAIN` variable. Copy over existing values from your old `.env` file for the `EVE_CLIENT_` variables, the `APP_KEY` varaible and finally the `DB_` variables.
 - Bring the stack back up with `docker-compose up -d` and watch the migration process.
+- Finally, once the migration process is complete, update the EVE SDE to populate the tables with static data with: `docker-compose exec seat-web php artisan eve:update:sde --force -n`
 
 🎉
 
@@ -277,6 +278,14 @@ Then, bring it back up with the `-d` flag.
 
 ```bash
 docker-compose up -d
+```
+
+### Update EVE SDE
+
+This is the final step, for real. You need to update the EVE SDE. With your stack up and running (after executing `docker-compose up -d`), you can now force an SDE update with:
+
+```bash
+docker-compose exec seat-web php artisan eve:update:sde --force -n
 ```
 
 Congrats, and welcome to SeAT 4!
