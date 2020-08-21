@@ -179,6 +179,24 @@ A `SEAT_SUBDOMAIN` value is also present, which sets the subdomain where the SeA
 
 By default, most folks will only configure the domain, subdomain and email and be done. Of course, if you have custom configurations and needs, feel free to adapt.
 
+###### Traefik - TLS
+
+Traefik should handle all of the relevant configuration to get your site to listen with a valid TLS certificate. The secrets for the TLS configuration in Traefik relies on an `acme.json` file which you should mount into the Traefik container from the outside so that it persists restart.
+
+Prepare the json file from within `/opt/seat-docker` with:
+
+```bash
+mkdir acme
+touch acme/acme.json
+chmod 600 acme/acme.json
+```
+
+Next, make sure you have the `TRAEFIK_ACME_EMAIL` variable set, and finally, uncomment the labels that will make use of the Let's Encrypt cert resolver in the `docker-compose.yml` file. By default, they will look like this, whereby you need to remove the `#` in front.
+
+```text
+#- "traefik.http.routers.seat-web.tls.certResolver=primary"
+```
+
 ##### EVE Online SSO
 
 Since SeAT's authentication relies on EVE's SSO, you need to configure the relevant client id and secret. You can find your old values in the backup you have made of the `.env` file. The values you need to set are:
