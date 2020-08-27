@@ -15,7 +15,7 @@ The upgrade path from SeAT 3.0 to SeAT 4.0 requires some manual work. This is pr
     Those instructions are valid for bare metal deployment only (non-docker installation).
     Please refer to [docker instructions] for a Docker installation.
 
-    **Remember** to do make a complete backup of your current database making a copy off the server where SeAT runs together with the `.env` file. Both of these are the only things required to rebuilt your instance in case of failure.
+    **Remember** to do a complete backup of your current database making a copy off the server where SeAT runs together with the `.env` file. Both of these are the only things required to rebuilt your instance in case of failure.
 
 ## Requirements
 
@@ -46,7 +46,7 @@ sudo -H -u www-data bash -c 'php /var/www/seat/artisan down'
 Clear cache
 
 ```bash
-sudo -H -u www-data bash -c 'php /var/www/seat/artisan seat:cache:clear
+sudo -H -u www-data bash -c 'php /var/www/seat/artisan seat:cache:clear'
 ```
 
 ### Backups
