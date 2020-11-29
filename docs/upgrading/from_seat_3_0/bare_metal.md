@@ -159,7 +159,7 @@ sudo -H -u www-data bash -c 'php /var/www/seat/artisan up'
 Convert user tokens format from previous version
 
 ```bash
-sudo -H -u www-data bash -c 'php /var/www/seat/artisan seat:token:upgrade
+sudo -H -u www-data bash -c 'php /var/www/seat/artisan seat:token:upgrade'
 ```
 
 Turn workers up
