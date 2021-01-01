@@ -9,8 +9,8 @@ Starting with eveseat/console@4.7.0 and eveseat/eveapi@4.8.0, a new system has b
 Each instance is allowed to get up to **30 buckets**. Every bucket will handle a batch of tokens, and their related characters and corporations data update.
 Size of bucket is dynamically set based on the following criteria :
 
- - a token can be updated only once every **3600 seconds**
- - a token can be updated in an average of **120 seconds**
+* a token can be updated only once every **3600 seconds**
+* a token can be updated in an average of **120 seconds**
 
 !!! info
     Most data ESI endpoint and data they deliver are restricted to a 1-hour cache long.
@@ -29,9 +29,9 @@ The second will show you details about a specific bucket including characters th
 
 A bucket can have one of the following status :
 
- - available : there are free slots according to current threshold
- - balanced : maximum tokens has been reached according to the current threshold, and the bucket cannot handle more token
- - overload : there are too many tokens handled by this bucket according to the current threshold
+* available : there are free slots according to current threshold
+* balanced : maximum tokens has been reached according to the current threshold, and the bucket cannot handle more token
+* overload : there are too many tokens handled by this bucket according to the current threshold
 
 ## Balancing
 
