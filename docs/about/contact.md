@@ -2,9 +2,9 @@
 
 # Contact
 
-Have a question? Want to say thank you? Need to express your opinion on SeAT? You are welcome to join us on our Slack [eve-seat].
+Have a question? Want to say thank you? Need to express your opinion on SeAT? You are welcome to join us on our official Discord Server! [https://discord.gg/VcUZRcnMYK](https://discord.gg/VcUZRcnMYK).
 
-Get invites [here]! [![Slack Status](https://eveseat-slack.herokuapp.com/badge.svg)](https://eveseat-slack.herokuapp.com/)
+We _used_ to have a Slack server, but that is going to fall away soon! The best place to find us will be Discord. For historical purposes though, the place to get invites was [here]! [![Slack Status](https://eveseat-slack.herokuapp.com/badge.svg)](https://eveseat-slack.herokuapp.com/)
 
 ## EVE Online Forum Thread
 
