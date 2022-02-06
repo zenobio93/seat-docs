@@ -35,6 +35,13 @@ sudo -H -u www-data bash -c 'php artisan vendor:publish --force --all'
 sudo -H -u www-data bash -c 'php artisan migrate'
 ```
 
+- *Renew config and route cache* to benefit of newly added functionalities:
+
+```bash
+sudo -H -u www-data bash -c 'php artisan route:cache'
+sudo -H -u www-data bash -c 'php artisan config:cache'
+```
+
 - *Clear SeAT cache* after installation:
 
 ```bash
