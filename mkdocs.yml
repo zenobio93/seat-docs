@@ -66,8 +66,9 @@ nav:
 theme:
     name: 'material'
     palette:
-        primary: 'grey'
-        accent: 'indigo'
+        scheme: 'slate'
+        primary: 'orange'
+        accent: 'orange'
     features:
       - content.code.copy
 
