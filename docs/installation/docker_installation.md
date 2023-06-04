@@ -36,7 +36,7 @@ The previously mentioned compose file is really simple. A high-level overview of
 | `eveseat/seat` | [https://hub.docker.com/r/eveseat/seat](https://hub.docker.com/r/eveseat/seat) |
 
 - The environment is configured using a top-level `.env` file (not to be confused with the SeAT specific `.env` file.
-- Only too ports are exposed by default. Those are `tcp/80` and `tcp/443`. These can be connected to in order to access the SeAT web interface.
+- Only two ports are exposed by default. Those are `tcp/80` and `tcp/443`. These can be connected to in order to access the SeAT web interface.
 - All containers are configured to restart on failure, so if your server reboots or a container dies for whatever reason it should automatically start up again.
 
 ## SeAT Docker Installation

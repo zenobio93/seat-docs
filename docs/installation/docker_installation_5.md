@@ -33,7 +33,7 @@ The official SeAT repository for Docker is shipped with a total of 4 `YAML` file
 - An alternative to Traefik `docker-compose.proxy.yml` file in which is adapted `front` SeAT container to be server behind a reverse proxy of your choice
 - A volume called `mariadb-data` and `seat-storage` is defined. These are the *most important* volumes as they contain all SeAT data. You should configure a backup solution for them!
 - The environment is configured using a top-level `.env` file.
-- Only too ports are exposed by default. Those are `tcp/80` and `tcp/443`. These can be connected to in order to access the SeAT web interface.
+- Only two ports are exposed by default. Those are `tcp/80` and `tcp/443`. These can be connected to in order to access the SeAT web interface.
 - All containers are configured to restart on failure, so if your server reboots or a container dies for whatever reason it should automatically start up again.
 
 The table bellow is listed overall consumed Docker image, including SeAT custom one - together with their source repository.
