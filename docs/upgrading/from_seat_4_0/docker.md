@@ -74,6 +74,7 @@ The table bellow is provided as a variable mapping between SeAT 4.x and SeAT 5.x
 |-----------------------------|--------------------------------|
 | `TRAEFIK_DOMAIN=seat.local` | `SEAT_DOMAIN=seat.seat.local`  |
 | `SEAT_SUBDOMAIN=seat`       | `SEAT_DOMAIN=seat.seat.local`  |
+| `REDIS_HOST=redis`          | `REDIS_HOST=cache`             |
 |                             | `PROXY_BACKEND_HTTP_PORT=8080` |
 |                             | `LOG_LEVEL=error`              |
 
@@ -230,6 +231,7 @@ The table bellow is provided as a variable mapping between SeAT 4.x and SeAT 5.x
 |-----------------------------|--------------------------------|
 | `TRAEFIK_DOMAIN=seat.local` | `SEAT_DOMAIN=seat.seat.local`  |
 | `SEAT_SUBDOMAIN=seat`       | `SEAT_DOMAIN=seat.seat.local`  |
+| `REDIS_HOST=redis`          | `REDIS_HOST=cache`             |
 |                             | `PROXY_BACKEND_HTTP_PORT=8080` |
 |                             | `LOG_LEVEL=error`              |
 
