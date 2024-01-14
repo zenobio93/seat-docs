@@ -12,19 +12,53 @@ As expected, updates for SeAT are deployed via images on the [GitHub Container R
 Every package version release will automatically start the build process to generate a new docker image.
 This means updates are super simple in the docker world. To update your instance, simply run:
 
-```bash linenums="1"
-# Update to the latest dockerhub images
-docker-compose pull
+=== "SeAT 4.x"
 
-# Take the stack down
-docker-compose down
+    ```bash linenums="1"
+    # Update to the latest dockerhub images
+    docker-compose pull
+    
+    # Take the stack down
+    docker-compose down
+    
+    # Bring the stack back up
+    docker-compose up -d
+    
+    # Cleanup any dangling images
+    docker image prune -f
+    ```
 
-# Bring the stack back up
-docker-compose up -d
+=== "SeAT 5.x - Traefik"
 
-# Cleanup any dangling images
-docker image prune -f
-```
+    ```bash linenums="1"
+    # Update to the latest dockerhub images
+    docker compose -f docker-compose.yml -f docker-compose.mariadb.yml -f docker-compose.traefik.yml pull
+    
+    # Take the stack down
+    docker compose -f docker-compose.yml -f docker-compose.mariadb.yml -f docker-compose.traefik.yml down
+    
+    # Bring the stack back up
+    docker compose -f docker-compose.yml -f docker-compose.mariadb.yml -f docker-compose.traefik.yml up -d
+    
+    # Cleanup any dangling images
+    docker image prune -f
+    ```
+
+=== "SeAT 5.x - Proxy"
+
+    ```bash linenums="1"
+    # Update to the latest dockerhub images
+    docker compose -f docker-compose.yml -f docker-compose.mariadb.yml -f docker-compose.proxy.yml pull
+    
+    # Take the stack down
+    docker compose -f docker-compose.yml -f docker-compose.mariadb.yml -f docker-compose.proxy.yml down
+    
+    # Bring the stack back up
+    docker compose -f docker-compose.yml -f docker-compose.mariadb.yml -f docker-compose.proxy.yml up -d
+    
+    # Cleanup any dangling images
+    docker image prune -f
+    ```
 
 !!! warning "Better safe then sorry"
     **Always** perform a [database backup] of your database before doing an update. Always.
