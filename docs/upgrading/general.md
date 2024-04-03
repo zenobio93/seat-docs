@@ -104,9 +104,17 @@ php artisan migrate
 
 - With the migrations done, run the seeders to update any static data:
 
-```bash
-php artisan db:seed --class=Seat\\Console\\database\\seeds\\ScheduleSeeder
-```
+=== "SeAT 4.x"
+
+    ```bash
+    php artisan db:seed --class=Seat\\Console\\database\\seeds\\ScheduleSeeder
+    ```
+
+=== "SeAT 5.x"
+
+    ```bash
+    php artisan db:seed --class=Seat\\Eveapi\\Database\\Seeders\\ScheduleSeeder
+    ```
 
 - Finally, we can simply bring our application back out of maintenance mode with:
 
