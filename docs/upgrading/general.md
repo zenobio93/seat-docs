@@ -113,7 +113,7 @@ php artisan migrate
 === "SeAT 5.x"
 
     ```bash
-    php artisan db:seed --class=Seat\\Eveapi\\Database\\Seeders\\ScheduleSeeder
+    php artisan db:seed --class=Seat\\Services\\Database\\Seeders\\PluginDatabaseSeeder
     ```
 
 - Finally, we can simply bring our application back out of maintenance mode with:
