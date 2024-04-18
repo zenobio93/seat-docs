@@ -65,7 +65,7 @@ We highly recommend that you read the details of this upgrade guide to get famil
 - If you are using a [custom stylesheet], open your `docker-compose.override.yml` file and replace the container name `seat-web` with `front`.
 - Download the new `.env` file template using 
   ```bash
-  curl -L https://raw.githubusercontent.com/eveseat/seat-docker/master/.env -o .env
+  curl -L https://raw.githubusercontent.com/eveseat/seat-docker/master/.env.example -o .env
   ```
 - Update the new `.env` file using your backup `.env.seat4.bak` 
 
